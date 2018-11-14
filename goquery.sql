@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2018 at 04:58 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: 14 Nov 2018 pada 18.39
+-- Versi Server: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Struktur dari tabel `comment`
 --
 
 CREATE TABLE `comment` (
@@ -39,7 +39,7 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `materi`
+-- Struktur dari tabel `materi`
 --
 
 CREATE TABLE `materi` (
@@ -53,7 +53,7 @@ CREATE TABLE `materi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Struktur dari tabel `post`
 --
 
 CREATE TABLE `post` (
@@ -66,7 +66,7 @@ CREATE TABLE `post` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `soal`
+-- Struktur dari tabel `soal`
 --
 
 CREATE TABLE `soal` (
@@ -79,18 +79,26 @@ CREATE TABLE `soal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
   `username` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
   `tipe` varchar(25) NOT NULL,
-  `nama` varchar(50) NOT NULL,
+  `first_name` varchar(25) NOT NULL,
+  `last_name` varchar(25) NOT NULL,
   `email` varchar(100) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`username`, `password`, `tipe`, `first_name`, `last_name`, `email`, `tanggal_lahir`, `foto`) VALUES
+('fauzanrahman', 'e9e01d0b69809c07b4fc19c50aeb49cc', 'member', 'Fauzan', 'Rahman', 'fauzanrahman0104@yahoo.com', '0000-00-00', '');
 
 --
 -- Indexes for dumped tables
@@ -160,30 +168,30 @@ ALTER TABLE `soal`
   MODIFY `id_soal` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `comment`
+-- Ketidakleluasaan untuk tabel `comment`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_fk1` FOREIGN KEY (`id_post`) REFERENCES `post` (`id_post`) ON DELETE CASCADE,
   ADD CONSTRAINT `comment_fk2` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
 
 --
--- Constraints for table `materi`
+-- Ketidakleluasaan untuk tabel `materi`
 --
 ALTER TABLE `materi`
   ADD CONSTRAINT `materi_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
 
 --
--- Constraints for table `post`
+-- Ketidakleluasaan untuk tabel `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
 
 --
--- Constraints for table `soal`
+-- Ketidakleluasaan untuk tabel `soal`
 --
 ALTER TABLE `soal`
   ADD CONSTRAINT `soal_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
