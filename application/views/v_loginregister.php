@@ -44,45 +44,45 @@
 		</form>
 	</div>
 	<div id="register" class="col s12">
-		<form class="col s12">
+		<form method="post" action="<?php echo site_url('User/tambah');?>" id="signupform" class="form-horizontal" role="form">
 			<div class="form-container">
 				<h3 class="teal-text">Welcome</h3>
 				<div class="row">
 					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate">
+						<input id="first_name" name="firstname" type="text" class="validate">
 						<label for="last_name">First Name</label>
 					</div>
 					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate">
+						<input id="last_name" name="lastname" type="text" class="validate">
 						<label for="last_name">Last Name</label>
+					</div>
+				</div>
+        <div class="row">
+					<div class="input-field col s12">
+						<input id="email" name="username" type="text" class="validate">
+						<label for="username">Username</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email" type="email" class="validate">
+						<input id="email" name="email" type="email" class="validate">
 						<label for="email">Email</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email-confirm" type="email" class="validate">
-						<label for="email-confirm">Email Confirmation</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="password" type="password" class="validate">
+						<input id="password" name="password" type="password" class="validate">
 						<label for="password">Password</label>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="input-field col s12">
-						<input id="password-confirm" type="password" class="validate">
+						<input id="password-confirm" name="password" type="password" class="validate">
 						<label for="password-confirm">Password Confirmation</label>
 					</div>
-				</div>
+				</div> -->
 				<center>
-					<button class="btn waves-effect waves-light teal" type="submit" name="action">Submit</button>
+					<button class="btn waves-effect waves-light teal" type="submit" name="submit">Submit</button>
 				</center>
 			</div>
 		</form>
