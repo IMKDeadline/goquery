@@ -9,8 +9,8 @@ class Model_User extends CI_Model
   }
 
 	public function daftar_user($data){
-        $this->db->insert('users',$data);
-        return true;
+    $this->db->insert('users',$data);
+    return true;
   }
 
 	public function login_user($data){
@@ -24,4 +24,26 @@ class Model_User extends CI_Model
         return false;
     }
   }
+
+	public function update_user($data){
+		$username = $this->session->users['username'];
+		$this->db->where('username', $username);
+
+		$result = $this->db->update('users',$data);
+		if ($result){
+			return TRUE;
+		}else {
+			return FALSE;
+		}
+	}
+
+	public function delete_user($username){
+		$this->db->where('username', $username);
+		$result = $this->db->delete('users');
+		if ($result){
+			return TRUE;
+		}else {
+			return FALSE;
+		}
+	}
 }
