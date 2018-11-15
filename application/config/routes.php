@@ -59,3 +59,5 @@ $route['forum/create'] = 'forum/create';
 $route['forum/delete'] = 'forum/delete';
 $route['forum/(:any)'] = 'forum/detail_post';
 $route['forum/(:any)/edit'] = 'forum/edit';
+
+$route['comment/(:any)/edit'] = 'comment/edit';

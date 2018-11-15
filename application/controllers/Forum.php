@@ -7,6 +7,7 @@ class Forum extends CI_Controller {
   {
       parent::__construct();
       $this->load->model('M_forum');
+      $this->load->model('M_comment');
   }
 
   public function index()
@@ -19,10 +20,12 @@ class Forum extends CI_Controller {
 
   public function detail_post(){
     if($this->uri->segment(2)){
-      $slug_post = $this->uri->segment(2);
+      $slug = $this->uri->segment(2);
       $css = array();
+      $id_post = $this->M_forum->get_id_post($slug);
       $data = array('title' => '',
-                    'post' => $this->M_forum->get_post($slug_post),
+                    'post' => $this->M_forum->get_post($slug),
+                    'all_comment' => $this->M_comment->get_all_comment_by_id_post($id_post),
                     'css' => $css);
       $this->load->view('template/v_header', $data);
       $this->load->view('forum/v_forum_detail');
@@ -82,4 +85,5 @@ class Forum extends CI_Controller {
     $this->M_forum->delete($id);
     redirect('forum');
   }
+
 }

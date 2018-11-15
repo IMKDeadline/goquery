@@ -32,6 +32,29 @@ class M_forum extends CI_Model {
     }
   }
 
+  public function get_slug_by_id_post($id_post){
+    $data = $this->db->select('slug')
+                    ->where('id_post', $id_post)
+                    ->get('post');
+    if($data->num_rows() > 0){
+      return $data->row()->slug;
+    }else{
+      return false;
+    }
+  }
+
+  public function get_id_post($slug){
+    $data = $this->db->select('id_post')
+                    ->where('slug', $slug)
+                    ->get('post');
+
+    if($data->num_rows() > 0){
+      return $data->row()->id_post;
+    }else{
+      return false;
+    }
+  }
+
   public function get_post($slug){
     $data = $this->db->where('slug', $slug)
                       ->limit(1)
