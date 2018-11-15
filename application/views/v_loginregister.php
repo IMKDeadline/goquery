@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+  <?php echo date('d-m-Y'); ?>
   <div class="container white z-depth-2">
 	<ul class="tabs teal">
 		<li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
