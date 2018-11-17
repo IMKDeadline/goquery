@@ -14,16 +14,20 @@ class Model_User extends CI_Model
   }
 
 	public function login_user($data){
-    $this->db->where('username',$data['username']);
-    $this->db->where('password',md5($data['password']));
-
-    $result = $this->db->get('users');
-    if($result->num_rows()==1){
-        return $result->row(0);
-    }else{
-        return false;
+			// $username= $data['username'];
+			// $password= md5($data['password']);
+			// $where = "username=$username AND password=$password OR email=$username AND password=$password";
+      // $this->db->where($where);
+			$this->db->where('username',$data['username']);
+			$this->db->where('password',md5($data['password']));
+			
+      $result = $this->db->get('users');
+      if($result->num_rows()==1){
+          return $result->row(0);
+      }else{
+          return false;
+      }
     }
-  }
 
 	public function update_user($data){
 		$username = $this->session->users['username'];

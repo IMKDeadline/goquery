@@ -68,12 +68,12 @@ class User extends CI_Controller {
 		$login= $this->Model_User->login_user($data);
 		if($login){
 			$sess_data = array(
-			'logged_in' => "Sudah Login",
-			'tipe' => $login->tipe,
-			'username' => $login->username
+				'logged_in' => "Sudah Login",
+				'tipe' => $login->tipe,
+				'username' => $login->username,
 			);
 			$this->session->set_userdata($sess_data);
-			redirect('Control/index');
+			redirect('Materi/view_adminMateri');
 		}else{
 			echo "error";
 		}
@@ -87,5 +87,10 @@ class User extends CI_Controller {
 	public function view_register()
 	{
 		$this->load->view('loginregister/v_register');
+	}
+
+	public function logout(){
+	  $this->session->sess_destroy();
+	  redirect(site_url('User/view_login'));
 	}
 }

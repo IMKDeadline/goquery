@@ -22,7 +22,7 @@
     <form method="post" action="<?php echo site_url('User/login');?>" id="signinform">
     <div id="input-boxes">
       <input type="text" name="username" class="input input-top" placeholder="Email or Username" required/><br />
-      <input type="text" name="password" class="input" placeholder="Password" required/><br />
+      <input type="password" name="password" class="input" placeholder="Password" required/><br />
     </div>
     <button type="submit" name="submit" id="sign-in-button" class="btn blue-btn"> Sign In </button>
     </form>

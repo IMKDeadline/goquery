@@ -17,7 +17,7 @@
 
   <form method="post" action="<?php echo site_url('User/tambah');?>" id="signinform" class="form-horizontal" role="form">
     <div id="input-boxes1">
-        <input type="text" class="input1 input-top" name="firstname" placeholder="Fist Name" required/>
+        <input type="text" class="input1 input-top" name="firstname" placeholder="First Name" required/>
         <input type="text" class="input1 input-top" name="lastname" placeholder="Last Name" required/>
     </div>
     <div id="input-boxes">
