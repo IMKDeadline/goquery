@@ -11,13 +11,14 @@ class User extends CI_Controller {
 
   public function tambah(){
   	$cekForm = $this->input->post(null,TRUE);
+		$tanggal = date('Y-m-d');
 		$data = array(
 		'first_name' => $this->input->post('firstname'),
 		'last_name' => $this->input->post('lastname'),
 		'username' => $this->input->post('username'),
 		'email' => $this->input->post('email'),
 		'password' => md5($this->input->post('password')),
-		'tanggal_lahir' => $this->input->post('tanggal'),
+		'tanggal_lahir' => $tanggal,
 		'tipe' => 'member'
 		);
 		$username = $this->input->post('username');
@@ -25,7 +26,7 @@ class User extends CI_Controller {
 		if($cek->num_rows() == 0 && $cekForm == TRUE){
 			$result = $this->Model_User->daftar_user($data);
 			if($result == TRUE){
-				$this->load->view('v_loginregister');
+				redirect('User/view_login');
 			}
 		} else{
 			echo "error";
@@ -59,5 +60,32 @@ class User extends CI_Controller {
 		}else {
 			echo "error";
 		}
+	}
+
+	public function login()
+	{
+		$data = $this->input->post(null,TRUE);
+		$login= $this->Model_User->login_user($data);
+		if($login){
+			$sess_data = array(
+			'logged_in' => "Sudah Login",
+			'tipe' => $login->tipe,
+			'username' => $login->username
+			);
+			$this->session->set_userdata($sess_data);
+			redirect('Control/index');
+		}else{
+			echo "error";
+		}
+	}
+
+	public function view_login()
+	{
+		$this->load->view('loginregister/v_login');
+	}
+
+	public function view_register()
+	{
+		$this->load->view('loginregister/v_register');
 	}
 }
