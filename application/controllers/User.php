@@ -24,24 +24,17 @@ class User extends CI_Controller {
 		);
 		$username = $this->input->post('username');
 		$cek = $this->db->query("SELECT username FROM users WHERE username = '$username'");
-		if($cek->num_rows() == 0 && $cekForm == TRUE){
+		if($cek->num_rows() == 0){
 			$result = $this->Model_User->daftar_user($data);
 			if($result == TRUE){
+				$this->session->set_flashdata('alert','sukses_insert');
 				redirect('User/view_login');
 			}
-		}else{
+		}	else{
 			$this->session->set_flashdata('register_status', 'failed');
 			redirect('register');
-		$result = $this->Model_User->daftar_user($data);
-		if($cek->num_rows() == 0 && $result==TRUE){
-			$this->session->set_flashdata('alert','sukses_insert');
-			redirect('User/view_login');
-		}else{
-			$this->session->set_flashdata('alert', 'gagal');
-			redirect('User/view_register');
 		}
   }
-}
 
 	public function edit(){
 		$cek = $this->input->post(null,TRUE);

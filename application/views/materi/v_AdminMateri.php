@@ -29,9 +29,13 @@
                                 <input type="text" name="nama" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Jenis Materi</label>
-                                <input type="text" name="jenis" class="form-control" required>
-                                <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
+                              <label for="tingkat">Tingkat Kesulitan</label>
+                              <select name="tingkat" class="form-control" id="tingkat">
+                                <option value="Mudah">Mudah</option>
+                                <option value="Sedang">Sedang</option>
+                                <option value="Sulit">Sulit</option>
+                              </select>
+                              <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="isi">Isi</label>
@@ -94,8 +98,13 @@
                                       <input type="hidden" class="form-control" name="id" value="<?php echo $mtr->materi_id; ?>">
                                   </div>
                                   <div class="form-group">
-                                      <label class="control-label" for="nama">Jenis Materi</label>
-                                      <input type="text" name="jenis" class="form-control" value="<?php echo $mtr->jenis;?>" required>
+                                    <label for="tingkat">Tingkat Kesulitan</label>
+                                    <select name="tingkat" class="form-control" id="tingkat">
+                                      <option value="Mudah">Mudah</option>
+                                      <option value="Sedang">Sedang</option>
+                                      <option value="Sulit">Sulit</option>
+                                    </select>
+                                    <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
                                   </div>
                                   <div class="form-group">
                                       <label class="control-label" for="tanggal">Tanggal</label>

@@ -75,7 +75,9 @@ class Tugas extends CI_Controller {
         'judul' => $this->input->post('judul'),
         'slug' => strtolower(url_title($this->input->post('judul'))),
         'jenis_tugas' => $this->input->post('jenis'),
-        'tanggal' => $this->input->post('tanggal')
+        'tanggal' => $this->input->post('tanggal'),
+        'max_score' => $this->input->post('score'),
+        'tingkat' => $this->input->post('tingkat')
       );
       $this->M_tugas->insert($data);
 
@@ -175,6 +177,13 @@ class Tugas extends CI_Controller {
           'jumlah_jawaban_benar' => $jumlah_jawaban_benar,
           'hasil' => $hasil];
     return $data;
+  }
+
+  public function view_exercise(){
+    $data = array(
+			'tugas' => $this->M_tugas->get_all_tugas()
+		);
+    $this->load->view('tugas/v_tugas_exercise',$data);
   }
 
 }
