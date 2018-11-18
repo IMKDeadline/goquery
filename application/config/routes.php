@@ -70,3 +70,10 @@ $route['tugas/submit'] = 'tugas/submit';
 $route['tugas/create'] = 'tugas/create';
 $route['tugas/insert'] = 'tugas/insert';
 $route['tugas/(:any)'] = 'tugas/detail_soal';
+
+$route['kelolamateri'] = 'materi/view_adminMateri';
+$route['kelolamateri/tambah'] = 'materi/tambah';
+$route['kelolamateri/edit'] = 'materi/edit';
+$route['kelolamateri/delete'] = 'materi/delete';
+$route['materi'] = 'materi/view_materi';
+$route['materi/(:any)'] = 'materi/view_detailMateri';
