@@ -122,34 +122,45 @@ class Tugas extends CI_Controller {
   }
 
   public function submit(){
-    $jawaban_arr = $this->input->post('jawaban');
-    $id_tugas = $this->input->post('id_tugas');
-    $username = $this->session->userdata('username');
-    $data_history_tugas = ['id_tugas' => $id_tugas,
-                          'username' => $username
-                          ];
-    $this->db->insert('history_tugas', $data_history_tugas);
-    $id_history_tugas = $this->db->insert_id();
-    foreach ($jawaban_arr as $id_detailsoal => $jawaban) {
-      $data[] = ['id_history_tugas' => $id_history_tugas,
-                'id_detail_jawaban' => $jawaban,
-                'id_detailsoal' => $id_detailsoal];
-    }
+      if($this->input->post()){
+        $jawaban_arr = $this->input->post('jawaban');
+        $id_tugas = $this->input->post('id_tugas');
+        $username = $this->session->userdata('username');
+        $data_history_tugas = ['id_tugas' => $id_tugas,
+                              'username' => $username
+                              ];
+        $this->db->insert('history_tugas', $data_history_tugas);
+        $id_history_tugas = $this->db->insert_id();
+        foreach ($jawaban_arr as $id_detailsoal => $jawaban) {
+          $data[] = ['id_history_tugas' => $id_history_tugas,
+                    'id_detail_jawaban' => $jawaban,
+                    'id_detailsoal' => $id_detailsoal];
+        }
 
-    $this->db->insert_batch('user_jawaban', $data);
+        $this->db->insert_batch('user_jawaban', $data);
 
-    $nilai = $this->hitung_nilai($id_history_tugas);
+        $data_nilai = $this->hitung_nilai($id_history_tugas);
+        $data = ['jumlah_soal' => $data_nilai['jumlah_soal'],
+                'jumlah_jawaban_benar' => $data_nilai['jumlah_jawaban_benar'],
+                'hasil' => $data_nilai['hasil']];
 
-    echo $nilai;
+        $this->load->view('template/v_header');
+        $this->load->view('tugas/v_tugas_result', $data);
+        $this->load->view('template/v_footer');
+      }else{
+        echo 'eror';
 
+      }
   }
 
   private function hitung_nilai($id_history_tugas){
     $jumlah_soal = $this->M_jawaban->get_jumlah_soal($id_history_tugas);
     $jumlah_jawaban_benar = $this->M_jawaban->get_jawaban_benar($id_history_tugas);
-    $hasil = $jumlah_jawaban_benar / $jumlah_soal;
-    echo $jumlah_soal.' '.$jumlah_jawaban_benar;
-    return $hasil;
+    $hasil = ($jumlah_jawaban_benar / $jumlah_soal) * 10;
+    $data =  ['jumlah_soal' => $jumlah_soal,
+          'jumlah_jawaban_benar' => $jumlah_jawaban_benar,
+          'hasil' => $hasil];
+    return $data;
   }
 
 }
