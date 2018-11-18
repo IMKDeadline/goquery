@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>GoQuery Register</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=site_url('assets/css/style.css')?>">
 </head>
 <body id="register">
@@ -14,6 +15,11 @@
     <div id="register-text">
       <h1>Sign up your account GoQuery</h1>
     </div>
+    <?php if($this->session->flashdata('register_status') == 'failed'){ ?>
+        <div class="alert alert-danger" id="login-text" role="alert">
+          The username is already registered
+        </div>
+    <?php }?>
 
   <form method="post" action="<?php echo site_url('User/tambah');?>" id="signinform" class="form-horizontal" role="form">
     <div id="input-boxes1">

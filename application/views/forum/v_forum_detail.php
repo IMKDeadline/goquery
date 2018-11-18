@@ -8,15 +8,17 @@
         <h5 class="card-title"><?=$post->judul?></h5>
         <p class="card-text"><?=$post->isi?></p>
 
-        <div class="row py-5">
-          <a href="<?=base_url('forum/'.$post->slug.'/edit')?>" class="btn btn-primary">Edit Post</a>
-          <div class="">
-            <form class="" action="delete" method="post">
-              <input type="hidden" name="id" value="<?=$post->id_post?>">
-              <input type="submit" class="btn btn-danger" value="Delete Post">
-          </form>
+        <?php if($post->created_by == $this->session->userdata('username')){ ?>
+          <div class="row py-5">
+            <a href="<?=base_url('forum/'.$post->slug.'/edit')?>" class="btn btn-primary">Edit Post</a>
+            <div class="">
+              <form class="" action="delete" method="post">
+                <input type="hidden" name="id" value="<?=$post->id_post?>">
+                <input type="submit" class="btn btn-danger" value="Delete Post">
+            </form>
+            </div>
           </div>
-        </div>
+        <?php }?>
       </div>
       <div class="card-footer text-muted">
         <?= 'dipost saat '.$post->tanggal?>
@@ -36,8 +38,10 @@
                 <h5 class="card-title"><?=$comment->created_by?></h5>
                 <p class="card-text"><?=$comment->isi?></p>
                 <div class="card-footer text-muted">
-                  <a href="<?=base_url('comment/'.$comment->id_comment.'/edit')?>"><i class="fas fa-edit"></i></a>
-                  <?= 'dipost saat '.$post->tanggal?>
+                  <?php if($comment->created_by == $this->session->userdata('username')){
+                    echo '<a href="<?=base_url("comment/'.$comment->id_comment.'/edit")?>"><i class="fas fa-edit"></i></a>';
+                  } ?>
+                  <?= 'dipost saat '.$comment->tanggal?>
                 </div>
               </div>
             </div>

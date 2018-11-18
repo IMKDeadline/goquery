@@ -28,8 +28,9 @@ class User extends CI_Controller {
 			if($result == TRUE){
 				redirect('User/view_login');
 			}
-		} else{
-			echo "error";
+		}else{
+			$this->session->set_flashdata('register_status', 'failed');
+			redirect('register');
 		}
   }
 
@@ -91,6 +92,7 @@ class User extends CI_Controller {
 
 	public function logout(){
 	  $this->session->sess_destroy();
-	  redirect(site_url('User/view_login'));
+		$this->session->set_flashdata('login_status', 'logout');
+	  redirect(site_url('login'));
 	}
 }

@@ -27,6 +27,7 @@ class Comment extends CI_Controller {
 
 
   public function insert(){
+    if($this->session->userdata('logged_in')){
       $data = array(
         'id_post' => $this->input->post('id_post'),
         'created_by' => $this->session->userdata('username'),
@@ -37,6 +38,11 @@ class Comment extends CI_Controller {
         $this->M_comment->insert($data);
         $this->session->set_flashdata('insert_comment','success');
         redirect('forum/'.$slug);
+    }else{
+      $this->session->set_flashdata('login_status', 'not_login');
+      redirect('login');
+    }
+
   }
 
   public function update(){

@@ -13,14 +13,19 @@ class Tugas extends CI_Controller {
 
   public function index()
 	{
-    $data = array('all_tugas' => $this->M_tugas->get_all_tugas());
-    $this->load->view('template/v_header', $data);
-    $this->load->view('tugas/v_tugas_index');
-    $this->load->view('template/v_footer');
+    if($this->session->userdata('logged_in')){
+      $data = array('all_tugas' => $this->M_tugas->get_all_tugas());
+      $this->load->view('template/v_header', $data);
+      $this->load->view('tugas/v_tugas_index');
+      $this->load->view('template/v_footer');
+    }else{
+      $this->session->set_flashdata('login_status', 'not_login');
+      redirect('login');
+    }
   }
 
   public function detail_soal(){
-    if($this->uri->segment(2)){
+    if($this->uri->segment(2) && $this->session->userdata('logged_in')){
       $slug = $this->uri->segment(2);
       $id_tugas = $this->M_tugas->get_id_tugas_by_slug($slug);
       $css = array();
@@ -32,16 +37,25 @@ class Tugas extends CI_Controller {
       $this->load->view('template/v_header', $data);
       $this->load->view('tugas/v_tugas_detail');
       $this->load->view('template/v_footer');
+    }else{
+      $this->session->set_flashdata('login_status', 'not_login');
+      redirect('login');
     }
   }
 
   private function form($action = 'insert', $id =''){
-    $data = array('action' => base_url('tugas/'.$action),
-                  'tugas' => $this->M_tugas->get_tugas_by_id($id)
-                );
-    $this->load->view('template/v_header', $data);
-    $this->load->view('tugas/v_tugas_form');
-    $this->load->view('template/v_footer');
+    if($this->session->userdata('logged_in')){
+      $data = array('action' => base_url('tugas/'.$action),
+                    'tugas' => $this->M_tugas->get_tugas_by_id($id)
+                  );
+      $this->load->view('template/v_header', $data);
+      $this->load->view('tugas/v_tugas_form');
+      $this->load->view('template/v_footer');
+    }else{
+      $this->session->set_flashdata('login_status', 'not_login');
+      redirect('login');
+    }
+
   }
 
   public function create()

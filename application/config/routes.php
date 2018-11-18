@@ -53,6 +53,10 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['login'] = 'user/view_login';
+$route['register'] = 'user/view_register';
+$route['logout'] = 'user/logout';
+
 $route['forum/update'] = 'forum/update';
 $route['forum/insert'] = 'forum/insert';
 $route['forum/create'] = 'forum/create';

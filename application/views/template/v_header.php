@@ -57,7 +57,7 @@
           <ul class="dropdown-menu">
             <li><a href="#">Setting Account</a></li>
             <li><a href="#">Privacy</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="<?=base_url('logout')?>">Logout</a></li>
           </ul>
         	</li>
       	</ul>
