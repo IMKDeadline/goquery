@@ -9,47 +9,61 @@ class Materi extends CI_Controller {
     $this->load->model('Model_Materi');
 	}
 
-	public function tambah(){
-		$username = $this->session->users['username'];
+	public function tambah()
+	{
 		$cek = $this->input->post(null,TRUE);
 		$tanggal = date('Y-m-d');
 		$data = array(
+			'nama' => $this->input->post('nama'),
 			'isi' => $this->input->post('isi'),
-			'created_by' => $username,
-			'username' => $this->input->post('username'),
+			'username' => $this->input->post('pembuat'),
 			'jenis' => $this->input->post('jenis'),
 			'tanggal' => $tanggal
 		);
 		if($cek == TRUE){
-			$result = $this->Model_User->tambah_materi($data);
+			$result = $this->Model_Materi->tambah_materi($data);
 			if($result == TRUE){
-				$this->load->view('index');
+				redirect('Materi/view_adminMateri');
 			}
 		} else{
 			echo "error";
 		}
 	}
 
-	public function edit(){
+	public function edit()
+	{
 		$id = $this->input->post('id');
-		$cek = $this->input->post(null,TRUE)
+		$cek = $this->input->post(null,TRUE);
 		if ($cek == TRUE){
-			$result = $this->Model_User->update_materi($id);
+			$result = $this->Model_Materi->update_materi($id);
 			if ($result == TRUE){
-				$this->load->view('index');
+				redirect('Materi/view_adminMateri');
 			}
 		}else {
 			echo "error";
 		}
 	}
 
-	public function delete(){
+	public function delete()
+	{
 		$id = $this->input->post('id');
 		$delete = $this->Model_Materi->delete_materi($id);
 		if ($delete == TRUE){
-			$this->load->view('index');
+			redirect('Materi/view_adminMateri');
 		}else {
 			echo "error";
+		}
+	}
+
+	public function view_adminMateri()
+	{
+		if ($this->session->userdata('logged_in')!="Sudah Login") {
+    	redirect('User/view_login');
+  	} else {
+			$data = array(
+	    	'materi' => $this->Model_Materi->get_all_materi()
+	  	);
+			$this->load->view('materi/v_AdminMateri',$data);
 		}
 	}
 }
