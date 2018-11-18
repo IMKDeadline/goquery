@@ -16,7 +16,7 @@ class Materi extends CI_Controller {
 		$data = array(
 			'nama' => $this->input->post('nama'),
 			'isi' => $this->input->post('isi'),
-			'username' => $this->input->post('pembuat'),
+			'created_by' => $this->input->post('pembuat'),
 			'jenis' => $this->input->post('jenis'),
 			'tanggal' => $tanggal
 		);
@@ -65,5 +65,19 @@ class Materi extends CI_Controller {
 	  	);
 			$this->load->view('materi/v_AdminMateri',$data);
 		}
+	}
+
+	public function view_materi(){
+		$data = array(
+			'materi' => $this->Model_Materi->get_all_materi()
+		);
+		$this->load->view('materi/v_Materi',$data);
+	}
+
+	public function view_detailMateri($id){
+		$data = array(
+			'materi' => $this->Model_Materi->get_detail($id)
+		);
+		$this->load->view('materi/v_detailMateri',$data);
 	}
 }

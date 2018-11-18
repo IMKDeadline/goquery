@@ -33,6 +33,46 @@ h5
 	position: absolute;
 }
 
+#header .navbarr .logo img{
+	width:40px;
+}
+
+#header .navbar-brand {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 1000;
+}
+
+#header .navbarr .navbar-nav li a {
+	color: white;
+	font-weight: 700;
+}
+
+#header .navbarr li a:hover {
+	color: #00b3fe;
+}
+
+#header .navbar-nav li {
+	margin: auto;
+	margin-right: 10px;
+}
+
+#header .navbar-nav .active li a:focus{
+	color: #00b3fe;
+	background-color: transparent;
+}
+
+#header .navbarr .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+#header .dropdown p{
+	margin-left: 25px;
+}
+
+#header .dropdown .btn{
+	margin-left:35px;
+}
+
 #login {
 	background-color: #FAFAFA;
 	color: #465360;
@@ -136,7 +176,6 @@ h5
 	border-bottom: 0;
 }
 
-
 #login .input-error {
 	border: 1px solid rgba(223, 91, 96, 1);
 	background: #fdf7f7;
@@ -174,13 +213,15 @@ h5
 
 #login #sign-up-link {
 	display: block;
-	font-size: 13px;
+	font-size: 15px;
 	text-align: center;
 	margin: 20px auto 0px auto;
+	color: white;
 }
 
 #login #sign-up-link a {
 	text-decoration: none;
+	color: white;
 }
 
 

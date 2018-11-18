@@ -5,31 +5,32 @@ class User extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->helper();
+		$this->load->helper('form');
     $this->load->model('Model_User');
+		$this->load->library('session');
+		$this->load->library('form_validation');
 	}
 
   public function tambah(){
-  	$cekForm = $this->input->post(null,TRUE);
 		$tanggal = date('Y-m-d');
 		$data = array(
-		'first_name' => $this->input->post('firstname'),
-		'last_name' => $this->input->post('lastname'),
-		'username' => $this->input->post('username'),
-		'email' => $this->input->post('email'),
-		'password' => md5($this->input->post('password')),
-		'tanggal_lahir' => $tanggal,
-		'tipe' => 'member'
+			'first_name' => $this->input->post('firstname'),
+			'last_name' => $this->input->post('lastname'),
+			'username' => $this->input->post('username'),
+			'email' => $this->input->post('email'),
+			'password' => md5($this->input->post('password')),
+			'tanggal_lahir' => $tanggal,
+			'tipe' => 'member'
 		);
 		$username = $this->input->post('username');
 		$cek = $this->db->query("SELECT username FROM users WHERE username = '$username'");
-		if($cek->num_rows() == 0 && $cekForm == TRUE){
-			$result = $this->Model_User->daftar_user($data);
-			if($result == TRUE){
-				redirect('User/view_login');
-			}
-		} else{
-			echo "error";
+		$result = $this->Model_User->daftar_user($data);
+		if($cek->num_rows() == 0 && $result==TRUE){
+			$this->session->set_flashdata('alert','sukses_insert');
+			redirect('User/view_login');
+		}else{
+			$this->session->set_flashdata('alert', 'gagal');
+			redirect('User/view_register');
 		}
   }
 
@@ -65,17 +66,17 @@ class User extends CI_Controller {
 	public function login()
 	{
 		$data = $this->input->post(null,TRUE);
-		$login= $this->Model_User->login_user($data);
+		$login = $this->Model_User->login_user($data);
 		if($login){
 			$sess_data = array(
-				'logged_in' => "Sudah Login",
-				'tipe' => $login->tipe,
-				'username' => $login->username,
+			'logged_in' => "Sudah Login",
+			'username' => $login->username,
 			);
 			$this->session->set_userdata($sess_data);
 			redirect('Materi/view_adminMateri');
 		}else{
-			echo "error";
+			$this->session->set_flashdata('alert', 'gagal_login');
+    	redirect('User/view_login');
 		}
 	}
 
@@ -90,7 +91,7 @@ class User extends CI_Controller {
 	}
 
 	public function logout(){
-	  $this->session->sess_destroy();
-	  redirect(site_url('User/view_login'));
+		$this->session->sess_destroy();
+		redirect(site_url('User/view_login'));
 	}
 }

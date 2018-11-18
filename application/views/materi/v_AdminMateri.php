@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ikfd6ijllclcevmsfcou3vx1o1t21j2c9uj0pv3y28c8gwcs"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,15 +9,14 @@
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/style.css">
 </head>
 <body id="kelolaMateri">
-<?php $username = ($this->session->users['username']); ?>
-<p>test<?php echo $username; ?></p>
+<?php $createdby  =  $this->session->userdata('username'); ?>
 
 <h2 style="text-align: center;margin-bottom: 30px"> Kelola Materi</h2>
 <div class="container" style="margin-top: 20px;padding-left: 25px">
 	<div class="col-md-12">
 		<button class="btn btn-md btn-primary" data-toggle="modal" data-target="#tambah">Tambah Materi</button>
         <div id="tambah" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"></button>
@@ -32,11 +31,11 @@
                             <div class="form-group">
                                 <label class="control-label">Jenis Materi</label>
                                 <input type="text" name="jenis" class="form-control" required>
-                                <input type="hidden" name="pembuat" class="form-control" value="<?= $username ?>">
+                                <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="isi">Isi</label>
-                                <textarea class="form-control" rows="5" name="isi">Enter text here...</textarea>
+                                <textarea class="form-control" name="isi" placeholder="Enter text here..."></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -71,7 +70,7 @@
                          <td><?php echo $no++;?></td>
                          <td><?php echo $mtr->nama;?></td>
                          <td><?php echo $mtr->jenis; ?></td>
-                         <td><?php echo $mtr->username; ?></td>
+                         <td><?php echo $mtr->created_by; ?></td>
                          <td><?php echo $mtr->tanggal;?></td>
                          <td style="text-align: center;">
                             <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#edit<?php echo $mtr->materi_id; ?>"><i class="glyphicon glyphicon-pencil"></i></button>
@@ -81,7 +80,7 @@
                     </tr>
                     <div id="edit<?php echo $mtr->materi_id; ?>" class="modal fade" role="dialog">
                       <!--                    echo kan php dari foreach di atas dengan objek nim ke dalam id edit-->
-                      <div class="modal-dialog">
+                      <div class="modal-dialog modal-lg">
                           <div class="modal-content">
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal"></button>
