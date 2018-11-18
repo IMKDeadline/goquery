@@ -95,7 +95,7 @@
                 <?php
     							$slug = $mtr->slug;
     						?>
-                <a href="materi/<?= $slug ?>" class="btn btn-success">Lihat Materi</a>
+                <a href="<?= base_url('materi/'.$slug) ?>" class="btn btn-success">Lihat Materi</a>
               </div>
             </div>
 					</div>
