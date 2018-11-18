@@ -14,6 +14,12 @@ class Model_Materi extends CI_Model
 		return $query->result();
 	}
 
+	public function get_detail($id)
+	{
+		$query = $this->db->where('materi_id', $id)->get('materi');
+		return $query->result();
+	}
+
   public function tambah_materi($data)
   {
     $this->db->insert('materi',$data);

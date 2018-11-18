@@ -6,7 +6,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=site_url('assets/css/style.css')?>">
 </head>
-<body id="login">
+<body id="login" style="background-color:#2d3436;">
+  <?php
+	if ($this->session->flashdata('alert')=='gagal_login'){
+		echo "<script>alert('Username atau Password salah.');</script>";
+	}
+	?>
   <div id="logo">
     <img src="<?=site_url('assets/images/db.png')?>">
   </div>

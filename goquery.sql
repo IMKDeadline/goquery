@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Nov 15, 2018 at 06:30 PM
+=======
 -- Generation Time: Nov 18, 2018 at 09:24 AM
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -58,6 +62,8 @@ CREATE TABLE `detail_jawaban` (
   `hasil` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+<<<<<<< HEAD
+=======
 --
 -- Dumping data for table `detail_jawaban`
 --
@@ -75,6 +81,7 @@ INSERT INTO `detail_jawaban` (`id_detailjawaban`, `id_detailsoal`, `jawaban`, `h
 (10, 4, 'select * karyawan where id = 4;', 1),
 (11, 4, '* select where karyawan has id = 4', 0);
 
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- --------------------------------------------------------
 
 --
@@ -84,6 +91,12 @@ INSERT INTO `detail_jawaban` (`id_detailjawaban`, `id_detailsoal`, `jawaban`, `h
 CREATE TABLE `detail_soal` (
   `id_detailsoal` int(11) NOT NULL,
   `id_tugas` int(11) NOT NULL,
+<<<<<<< HEAD
+  `no_soal` varchar(5) NOT NULL,
+  `pertanyaan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+=======
   `no_soal` varchar(5) DEFAULT NULL,
   `pertanyaan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -149,6 +162,7 @@ INSERT INTO `history_tugas` (`id_history_tugas`, `id_tugas`, `username`, `tangga
 (36, 1, NULL, '2018-11-18 07:10:01'),
 (37, 1, NULL, '2018-11-18 07:10:09');
 
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- --------------------------------------------------------
 
 --
@@ -184,9 +198,26 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`id_post`, `judul`, `slug`, `tanggal`, `created_by`, `isi`) VALUES
 (2, 'Cara menghafal query dengan mudah', 'cara-menghafal-query-dengan-mudah-2', '2018-11-13', NULL, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n'),
+<<<<<<< HEAD
+(7, 'Bang cara join table secara gaib', 'bang-cara-join-table-secara-gaib-7', '2018-11-14', NULL, '<p>Jadi begini guys, saya selaku sebagai ingin menyampaikan apa yang tidak bisa disampaikanasdasd</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `soal`
+--
+
+CREATE TABLE `soal` (
+  `id_soal` int(10) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jenis` varchar(25) NOT NULL,
+  `created_by` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
 (7, 'Bang cara join table secara gaib', 'bang-cara-join-table-secara-gaib-7', '2018-11-14', NULL, '<p>Jadi begini guys, saya selaku sebagai ingin menyampaikan apa yang tidak bisa disampaikanasdasd</p>'),
 (8, 'Bang cara join table secara gaib', 'bang-cara-join-table-secara-gaib-8', '2018-11-17', NULL, '<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</em><br /><br /></p>\r\n<p>&nbsp;</p>\r\n<p style=\"padding-left: 60px;\"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</strong><br /><br /></p>'),
 (9, 'cara menampilkan 2 table yang menampilkan 1 irisan yang sama', 'cara-menampilkan-2-table-yang-menampilkan-1-irisan-yang-sama-9', '2018-11-18', 'yafimm', '<p>[ASK]</p>\r\n<p>Saya punya 2 table, mahasiswa fk(dosen) dan dosen pk(nid), saya mau nampilin mahasiswa yang dosennya pak anwar, kira kira bagaimana ya?</p>\r\n<p>&nbsp;</p>\r\n<table style=\"height: 127px; width: 29.317%; border-collapse: collapse; border-style: double;\" border=\"1\">\r\n<tbody>\r\n<tr style=\"height: 42px;\">\r\n<td style=\"width: 50%; height: 42px; padding-left: 30px;\"><strong>Dosen</strong></td>\r\n<td style=\"width: 50%; height: 42px; text-align: center;\"><strong>Mahasiswa</strong></td>\r\n</tr>\r\n<tr style=\"height: 42px;\">\r\n<td style=\"width: 50%; height: 42px;\">Dadang</td>\r\n<td style=\"width: 50%; height: 42px;\">Suaeb</td>\r\n</tr>\r\n<tr style=\"height: 43px;\">\r\n<td style=\"width: 50%; height: 43px;\">Dadang</td>\r\n<td style=\"width: 50%; height: 43px;\">Mansyur</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Berikut hasil yang saya harapkan seperti pada tabel diatas</p>');
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 
 -- --------------------------------------------------------
 
@@ -196,6 +227,13 @@ INSERT INTO `post` (`id_post`, `judul`, `slug`, `tanggal`, `created_by`, `isi`) 
 
 CREATE TABLE `tugas` (
   `id_tugas` int(11) NOT NULL,
+<<<<<<< HEAD
+  `tanggal` date NOT NULL,
+  `jenis_tugas` varchar(50) NOT NULL,
+  `created_by` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+=======
   `judul` varchar(100) NOT NULL,
   `slug` text NOT NULL,
   `tanggal` date NOT NULL,
@@ -210,6 +248,7 @@ CREATE TABLE `tugas` (
 INSERT INTO `tugas` (`id_tugas`, `judul`, `slug`, `tanggal`, `jenis_tugas`, `created_by`) VALUES
 (1, 'Latihan Query 1', 'latihan-query-1', '2018-11-18', 'exercise', NULL);
 
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- --------------------------------------------------------
 
 --
@@ -228,6 +267,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
+=======
 -- Dumping data for table `users`
 --
 
@@ -383,6 +424,7 @@ INSERT INTO `user_jawaban` (`id_jawaban`, `id_history_tugas`, `id_detailsoal`, `
 (128, 37, 1, 1);
 
 --
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Indexes for dumped tables
 --
 
@@ -409,6 +451,8 @@ ALTER TABLE `detail_soal`
   ADD KEY `fk_tugas` (`id_tugas`);
 
 --
+<<<<<<< HEAD
+=======
 -- Indexes for table `history_tugas`
 --
 ALTER TABLE `history_tugas`
@@ -417,6 +461,7 @@ ALTER TABLE `history_tugas`
   ADD KEY `fk_users` (`username`);
 
 --
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Indexes for table `materi`
 --
 ALTER TABLE `materi`
@@ -431,6 +476,16 @@ ALTER TABLE `post`
   ADD KEY `created_by` (`created_by`);
 
 --
+<<<<<<< HEAD
+-- Indexes for table `soal`
+--
+ALTER TABLE `soal`
+  ADD PRIMARY KEY (`id_soal`),
+  ADD KEY `created_by` (`created_by`);
+
+--
+=======
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Indexes for table `tugas`
 --
 ALTER TABLE `tugas`
@@ -444,6 +499,8 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`username`);
 
 --
+<<<<<<< HEAD
+=======
 -- Indexes for table `user_jawaban`
 --
 ALTER TABLE `user_jawaban`
@@ -453,6 +510,7 @@ ALTER TABLE `user_jawaban`
   ADD KEY `fk_history_tugas` (`id_history_tugas`);
 
 --
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -466,12 +524,19 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `detail_jawaban`
 --
 ALTER TABLE `detail_jawaban`
+<<<<<<< HEAD
+  MODIFY `id_detailjawaban` int(11) NOT NULL AUTO_INCREMENT;
+=======
   MODIFY `id_detailjawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 
 --
 -- AUTO_INCREMENT for table `detail_soal`
 --
 ALTER TABLE `detail_soal`
+<<<<<<< HEAD
+  MODIFY `id_detailsoal` int(11) NOT NULL AUTO_INCREMENT;
+=======
   MODIFY `id_detailsoal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -479,6 +544,7 @@ ALTER TABLE `detail_soal`
 --
 ALTER TABLE `history_tugas`
   MODIFY `id_history_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 
 --
 -- AUTO_INCREMENT for table `materi`
@@ -490,6 +556,21 @@ ALTER TABLE `materi`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
+<<<<<<< HEAD
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `soal`
+--
+ALTER TABLE `soal`
+  MODIFY `id_soal` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tugas`
+--
+ALTER TABLE `tugas`
+  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT;
+=======
   MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
@@ -503,6 +584,7 @@ ALTER TABLE `tugas`
 --
 ALTER TABLE `user_jawaban`
   MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 
 --
 -- Constraints for dumped tables
@@ -528,6 +610,8 @@ ALTER TABLE `detail_soal`
   ADD CONSTRAINT `fk_tugas` FOREIGN KEY (`id_tugas`) REFERENCES `tugas` (`id_tugas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+<<<<<<< HEAD
+=======
 -- Constraints for table `history_tugas`
 --
 ALTER TABLE `history_tugas`
@@ -535,6 +619,7 @@ ALTER TABLE `history_tugas`
   ADD CONSTRAINT `fk_users` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Constraints for table `materi`
 --
 ALTER TABLE `materi`
@@ -547,10 +632,21 @@ ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
 
 --
+<<<<<<< HEAD
+-- Constraints for table `soal`
+--
+ALTER TABLE `soal`
+  ADD CONSTRAINT `soal_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE;
+
+--
+=======
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 -- Constraints for table `tugas`
 --
 ALTER TABLE `tugas`
   ADD CONSTRAINT `fk_user` FOREIGN KEY (`created_by`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+<<<<<<< HEAD
+=======
 
 --
 -- Constraints for table `user_jawaban`
@@ -559,6 +655,7 @@ ALTER TABLE `user_jawaban`
   ADD CONSTRAINT `fk_detailjawaban1` FOREIGN KEY (`id_detail_jawaban`) REFERENCES `detail_jawaban` (`id_detailjawaban`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_detailsoal1` FOREIGN KEY (`id_detailsoal`) REFERENCES `detail_soal` (`id_detailsoal`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_history_tugas` FOREIGN KEY (`id_history_tugas`) REFERENCES `history_tugas` (`id_history_tugas`) ON DELETE CASCADE ON UPDATE CASCADE;
+>>>>>>> 589606cd8336c6f36a22fec96b60cf6c41bec779
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

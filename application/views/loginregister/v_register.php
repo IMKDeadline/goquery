@@ -6,7 +6,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=site_url('assets/css/style.css')?>">
 </head>
-<body id="register">
+<body id="register" style="background-color:#2d3436;">
+  <?php
+  if ($this->session->flashdata('alert')=='sukses_insert'){
+    echo "<script>alert('Berhasil mendaftarkan, silahkan melakukan login dengan akun anda.');</script>";
+  }else if ($this->session->flashdata('alert')=='gagal'){
+    echo "<script>alert('Username telah digunakan, silahkan gunakan username yang lain.');</script>";
+  }
+	?>
+
   <div id="register-window" class="center">
     <div id="profile-pic">
       <img src="<?=site_url('assets/images/db.png')?>">
