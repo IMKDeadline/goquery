@@ -61,3 +61,8 @@ $route['forum/(:any)'] = 'forum/detail_post';
 $route['forum/(:any)/edit'] = 'forum/edit';
 
 $route['comment/(:any)/edit'] = 'comment/edit';
+
+$route['tugas/submit'] = 'tugas/submit';
+$route['tugas/create'] = 'tugas/create';
+$route['tugas/insert'] = 'tugas/insert';
+$route['tugas/(:any)'] = 'tugas/detail_soal';

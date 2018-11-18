@@ -58,7 +58,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top navbarr">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">GoQuery</a>
+          <a class="navbar-brand" href="#">GoQuery</a>
           <img src="<?=site_url('assets/images/db.png')?>"style="width:40px;">
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
