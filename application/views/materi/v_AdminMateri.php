@@ -15,6 +15,31 @@
 <div class="container" style="margin-top: 20px;padding-left: 25px">
 	<div class="col-md-12">
 		<button class="btn btn-md btn-primary" data-toggle="modal" data-target="#tambah">Tambah Materi</button>
+
+    <!-- Alert CRUD sukses atau gagal -->
+    <?php if($this->session->flashdata('insert_materi') == 'success') { ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Successfully input data Materi
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <?php }else if($this->session->flashdata('insert_materi') == 'failed') { ?>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Failed input data Materi, Data already exists or is incomplete
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <?php }else if($this->session->flashdata('delete_materi') == 'success') { ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        successfully deleted the data
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <?php } ?>
+
         <div id="tambah" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -22,7 +47,7 @@
                         <button type="button" class="close" data-dismiss="modal"></button>
                         <h4 class="modal-title">Tambah Materi</h4>
                     </div>
-                    <form method="post" action="tambah">
+                    <?=form_open('kelolamateri/tambah')?>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label class="control-label">Nama Materi</label>
@@ -90,7 +115,7 @@
                                   <button type="button" class="close" data-dismiss="modal"></button>
                                   <h4 class="modal-title">Edit Materi</h4>
                               </div>
-                              <?php echo form_open("Materi/edit"); ?>
+                              <?php echo form_open("kelolamateri/edit"); ?>
                               <div class="modal-body">
                                   <div class="form-group">
                                       <label class="control-label" for="nama">Nama Materi</label>
@@ -130,7 +155,7 @@
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal"></button>
                                   <h4 class="modal-title">Anda Ingin Menghapus Materi <?php echo $mtr->nama; ?> ?</h4>
-                              <?php echo form_open("materi/delete/$mtr->materi_id"); ?>
+                              <?php echo form_open("kelolamateri/delete/$mtr->materi_id"); ?>
                                   <input type="hidden" class="form-control" name="id" value="<?php echo $mtr->materi_id; ?>">
                               </div>
                               <div class="modal-footer">

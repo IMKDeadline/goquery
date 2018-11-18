@@ -15,6 +15,7 @@ class Materi extends CI_Controller {
 		$tanggal = date('Y-m-d');
 		$data = array(
 			'nama' => $this->input->post('nama'),
+			'slug' => strtolower(url_title($this->input->post('nama'))),
 			'isi' => $this->input->post('isi'),
 			'created_by' => $this->input->post('pembuat'),
 			'jenis' => $this->input->post('jenis'),
@@ -23,10 +24,12 @@ class Materi extends CI_Controller {
 		if($cek == TRUE){
 			$result = $this->Model_Materi->tambah_materi($data);
 			if($result == TRUE){
-				redirect('Materi/view_adminMateri');
+				$this->session->set_flashdata('insert_materi', 'success');
+				redirect('kelolamateri');
 			}
 		} else{
-			echo "error";
+			$this->session->set_flashdata('insert_materi', 'failed');
+			redirect('kelolamateri');
 		}
 	}
 
@@ -37,10 +40,12 @@ class Materi extends CI_Controller {
 		if ($cek == TRUE){
 			$result = $this->Model_Materi->update_materi($id);
 			if ($result == TRUE){
-				redirect('Materi/view_adminMateri');
+				$this->session->set_flashdata('insert_materi', 'success');
+				redirect('kelolamateri');
 			}
 		}else {
-			echo "error";
+			$this->session->set_flashdata('insert_materi', 'failed');
+			redirect('kelolamateri');
 		}
 	}
 
@@ -49,9 +54,11 @@ class Materi extends CI_Controller {
 		$id = $this->input->post('id');
 		$delete = $this->Model_Materi->delete_materi($id);
 		if ($delete == TRUE){
-			redirect('Materi/view_adminMateri');
+			$this->session->set_flashdata('delete_materi', 'success');
+			redirect('kelolamateri');
 		}else {
-			echo "error";
+			$this->session->set_flashdata('delete_materi', 'failed');
+			redirect('kelolamateri');
 		}
 	}
 
@@ -74,9 +81,10 @@ class Materi extends CI_Controller {
 		$this->load->view('materi/v_Materi',$data);
 	}
 
-	public function view_detailMateri($id){
+	public function view_detailMateri(){
+		$slug = $this->uri->segment(2);
 		$data = array(
-			'materi' => $this->Model_Materi->get_detail($id)
+			'materi' => $this->Model_Materi->get_detail($slug)
 		);
 		$this->load->view('materi/v_detailMateri',$data);
 	}

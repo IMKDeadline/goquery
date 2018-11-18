@@ -93,9 +93,9 @@
               </div>
               <div class="col-4">
                 <?php
-    							$id = $mtr->materi_id;
+    							$slug = $mtr->slug;
     						?>
-                <a href="view_detailMateri/<?= $id ?>" class="btn btn-success">Lihat Materi</a>
+                <a href="materi/<?= $slug ?>" class="btn btn-success">Lihat Materi</a>
               </div>
             </div>
 					</div>
