@@ -68,12 +68,12 @@
 
 <!--Judul-->
   <div class="container judul">
-    <span>Quiz</span>
+    <span>Latihan</span>
     <span>></span>
-    <span>Query</span>
+    <span>Basic Query</span>
     <div class="row">
       <div class="col-md-12">
-        <h2>Query</h3>
+        <h2>Basic Query</h3>
       </div>
     </div>
   </div>
@@ -83,22 +83,26 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9 middle-top">
+        <?php
+        foreach ($tugas as $tgs) {
+        ?>
 					<div class="col-12 isi">
 						<div class="row">
               <div class="col-md-12 nama">
-                <h5>Quiz 1 : Insert Table</h5>
+                <h5><?= $tgs->judul; ?></h5>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <span>Mudah,</span>
-                <span>Max Score 10,</span>
+                <span><?= $tgs->tingkat; ?>,</span>
+                <span>Max Score <?= $tgs->max_score; ?></span>
               </div>
               <div class="col-md-8">
-                <a href="" class="btn btn-success">Lihat Materi</a>
+                <a href="" class="btn btn-success">Mulai Latihan</a>
               </div>
             </div>
 					</div>
+        <?php } ?>
       </div>
       <div class="col-md-3">
         <div class="col-lg-12 middle-top">
