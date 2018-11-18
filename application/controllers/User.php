@@ -24,7 +24,6 @@ class User extends CI_Controller {
 		);
 		$username = $this->input->post('username');
 		$cek = $this->db->query("SELECT username FROM users WHERE username = '$username'");
-<<<<<<< HEAD
 		if($cek->num_rows() == 0 && $cekForm == TRUE){
 			$result = $this->Model_User->daftar_user($data);
 			if($result == TRUE){
@@ -33,7 +32,6 @@ class User extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('register_status', 'failed');
 			redirect('register');
-=======
 		$result = $this->Model_User->daftar_user($data);
 		if($cek->num_rows() == 0 && $result==TRUE){
 			$this->session->set_flashdata('alert','sukses_insert');
@@ -41,9 +39,9 @@ class User extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('alert', 'gagal');
 			redirect('User/view_register');
->>>>>>> 64add1800bf0a4d7f2bd5a23f6ae46a1ffaea93f
 		}
   }
+}
 
 	public function edit(){
 		$cek = $this->input->post(null,TRUE);
@@ -102,13 +100,10 @@ class User extends CI_Controller {
 	}
 
 	public function logout(){
-<<<<<<< HEAD
 	  $this->session->sess_destroy();
 		$this->session->set_flashdata('login_status', 'logout');
 	  redirect(site_url('login'));
-=======
 		$this->session->sess_destroy();
 		redirect(site_url('User/view_login'));
->>>>>>> 64add1800bf0a4d7f2bd5a23f6ae46a1ffaea93f
 	}
 }
