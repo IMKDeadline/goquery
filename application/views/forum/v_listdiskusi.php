@@ -152,7 +152,7 @@
   <div class="container">
     <div class="row">
       <?php
-					foreach ($post as $post) {
+					foreach ($post as $key => $post ) {
 				?>
 				<div class="col-sm-12 col-md-5 col-lg-4 py-4">
 					<div class="col-12 event">
@@ -166,7 +166,17 @@
 						</div>
 						<div class="bottom">
 							<div class="time">
-								<span class="comment"><?= $post->comment ?></span>
+                <?php
+                if (isset($comment[$key]->total) == NULL){
+                  echo '<span class="comment">0</span>';
+                }else{
+                  if ($comment[$key]->id_post == $post->id_post){
+                    echo '<span class="comment">'. $comment[$key]->total .'</span>';
+                  }else {
+                    echo '<span class="comment">0</span>';
+                  }
+                }
+                ?>
 								<span>Comment</span>
 							</div>
 							<div class="relawan">

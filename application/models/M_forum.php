@@ -23,7 +23,7 @@ class M_forum extends CI_Model {
   }
 
 
-	public function get_all_post(){
+	public function get_diskusi(){
     $this->db->select('post.id_post, post.judul, post.tanggal, post.created_by, first_name, last_name');
     $this->db->from('post');
     $this->db->join('users','username = created_by');
