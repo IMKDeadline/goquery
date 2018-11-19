@@ -38,9 +38,9 @@
 
 
       </div>
-      </div>
 
-        <h2 class="py-2">Comments</h2>
+      <h2 class="mt-4">Comments</h2>
+      <hr>
       <?php
       if(!empty($all_comment)){
        foreach ($all_comment as $comment){ ?>
@@ -62,42 +62,38 @@
           </div>
       <?php }
           }else{
-        echo "<h5 class='py-5'>No Comments Yet</h5>";
+        echo "<h5 class='py-3'>No Comments Yet</h5>";
       } ?>
+      <!-- Box Comment  -->
+      <div class="card m  y-5">
+        <div class="card-header">
+          Your Comment
+        </div>
+        <div class="card-body">
+
+          <?php
+          echo form_open_multipart('comment/insert');
+          ?>
+          <div class="col-md-12">
+            <input type="hidden" name="tanggal" class="form-control" value="<?= date('Y-m-d H-m-s');?>">
+            <input type="hidden" name="id_post" value="<?=$post->id_post?>">
+            <input type="hidden" name="slug" value="<?=$post->slug?>">
+            <div class="form-group">
+              <textarea name="isi_comment" class="form-control" placeholder="Keterangan" id="keterangan"></textarea>
+            </div>
+
+            <div class="form-group">
+              <input type="submit" name="submit" value="Post your answer" class="btn btn-primary">
+              <input type="reset" name="reset" value="Reset" class="btn btn-danger">
+            </div>
+
+          </div>
+          <?php echo form_close() ?>
+
+        </div>
       </div>
-
-
+      </div>
     </div>
-
-        <!-- Box Comment  -->
-        <div class="card">
-          <div class="card-header">
-            Your Comment
-          </div>
-          <div class="card-body">
-
-            <?php
-            echo form_open_multipart('comment/insert');
-            ?>
-            <div class="col-md-12">
-              <input type="hidden" name="tanggal" class="form-control" value="<?= date('Y-m-d H-m-s');?>">
-              <input type="hidden" name="id_post" value="<?=$post->id_post?>">
-              <input type="hidden" name="slug" value="<?=$post->slug?>">
-              <div class="form-group">
-                <textarea name="isi_comment" class="form-control" placeholder="Keterangan" id="keterangan"></textarea>
-              </div>
-
-              <div class="form-group">
-                <input type="submit" name="submit" value="Simpan Data" class="btn btn-primary btn-lg">
-                <input type="reset" name="reset" value="Reset" class="btn btn-danger btn-lg">
-              </div>
-
-            </div>
-            <?php echo form_close() ?>
-
-            </div>
-          </div>
-      </div>
 </div>
 
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nfqrx1rnrng76u9ardv32o9akavsaw05edid61v8ku0cdyk3  "></script>
