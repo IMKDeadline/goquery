@@ -37,7 +37,7 @@
 
 
     <form method="post" action="<?php echo site_url('User/login');?>" id="signinform">
-    <div id="input-boxes">
+    <div id="input-boxes" style="width: 340px;">
       <input type="text" name="username" class="input input-top" placeholder="Username" required/><br />
       <input type="password" name="password" class="input" placeholder="Password" required/><br />
     </div>

@@ -36,7 +36,7 @@ class Model_Materi extends CI_Model
 		$data = array(
 			'nama' => $this->input->post('nama'),
 			'isi' => $this->input->post('isi'),
-			'jenis' => $this->input->post('jenis')
+			'jenis' => strtolower($this->input->post('tingkat'))
 		);
 		$this->db->where('materi_id', $id);
 		$update = $this->db->update('materi', $data);

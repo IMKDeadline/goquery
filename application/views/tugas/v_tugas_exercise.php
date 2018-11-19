@@ -86,18 +86,18 @@
         <?php
         foreach ($tugas as $tgs) {
         ?>
-					<div class="col-12 isi">
+					<div class="col-12 isi <?=$tgs->tingkat;?>">
 						<div class="row">
               <div class="col-md-12 nama">
                 <h5><?= $tgs->judul; ?></h5>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4">
-                <span><?= $tgs->tingkat; ?>,</span>
-                <span>Max Score <?= $tgs->max_score; ?></span>
+              <div class="col-md-5">
+                <span>Kesulitan: <?= $tgs->tingkat; ?>,</span>
+                <span>Max Score: <?= $tgs->max_score; ?></span>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-7">
                 <a href="" class="btn btn-success">Mulai Latihan</a>
               </div>
             </div>
@@ -110,26 +110,26 @@
             <h6>STATUS</h6>
           </div>
           <div class="row jenis">
-            <input type="checkbox" name="info" value="Selesai"></input>
+            <input type="radio" name="info" value="selesai"></input>
             <span>Selesai</span>
           </div>
           <div class="row jenis">
-            <input type="checkbox" name="info" value="Belum"></input>
+            <input type="radio" name="info" value="belum"></input>
             <span>Belum</span>
           </div>
           <div class="row jenis" style="border-bottom: ridge; border-color: #f5f6fa;">
             <h6>TINGKAT KESULITAN</h6>
           </div>
           <div class="row jenis">
-            <input type="checkbox" name="tingkat" value="Mudah"></input>
+            <input type="radio" name="tingkat" value="mudah"></input>
             <span>Mudah</span>
           </div>
           <div class="row jenis">
-            <input type="checkbox" name="tingkat" value="Sedang"></input>
+            <input type="radio" name="tingkat" value="sedang"></input>
             <span>Sedang</span>
           </div>
           <div class="row jenis">
-            <input type="checkbox" name="tingkat" value="Sulit"></input>
+            <input type="radio" name="tingkat" value="sulit"></input>
             <span>Sulit</span>
           </div>
         </div>
@@ -147,5 +147,28 @@
 		</div>
 	</div>
 	<!--End Copyright-->
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('input[name="tingkat"]').click(function(){
+        var data = $(this).val();
+        $('.mudah').show();
+        $('.sedang').show();
+        $('.sulit').show();
+        if (data=="sulit"){
+          $('.sedang').hide();
+          $('.mudah').hide();
+        }
+        if (data=="sedang"){
+          $('.sulit').hide();
+          $('.mudah').hide();
+        }
+        if (data=="mudah"){
+          $('.sedang').hide();
+          $('.sulit').hide();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
