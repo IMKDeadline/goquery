@@ -18,7 +18,7 @@ class Materi extends CI_Controller {
 			'slug' => strtolower(url_title($this->input->post('nama'))),
 			'isi' => $this->input->post('isi'),
 			'created_by' => $this->input->post('pembuat'),
-			'jenis' => $this->input->post('jenis'),
+			'jenis' => $this->input->post('tingkat'),
 			'tanggal' => $tanggal
 		);
 		if($cek == TRUE){

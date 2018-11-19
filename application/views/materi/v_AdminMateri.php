@@ -3,7 +3,7 @@
 <head>
   <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ikfd6ijllclcevmsfcou3vx1o1t21j2c9uj0pv3y28c8gwcs"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/style.css">
@@ -56,9 +56,9 @@
                             <div class="form-group">
                               <label for="tingkat">Tingkat Kesulitan</label>
                               <select name="tingkat" class="form-control" id="tingkat">
-                                <option value="Mudah">Mudah</option>
-                                <option value="Sedang">Sedang</option>
-                                <option value="Sulit">Sulit</option>
+                                <option value="mudah">Mudah</option>
+                                <option value="sedang">Sedang</option>
+                                <option value="sulit">Sulit</option>
                               </select>
                               <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
                             </div>
@@ -125,9 +125,9 @@
                                   <div class="form-group">
                                     <label for="tingkat">Tingkat Kesulitan</label>
                                     <select name="tingkat" class="form-control" id="tingkat">
-                                      <option value="Mudah">Mudah</option>
-                                      <option value="Sedang">Sedang</option>
-                                      <option value="Sulit">Sulit</option>
+                                      <option value="mudah">Mudah</option>
+                                      <option value="sedang">Sedang</option>
+                                      <option value="sulit">Sulit</option>
                                     </select>
                                     <input type="hidden" name="pembuat" class="form-control" value="<?= $createdby; ?>">
                                   </div>
@@ -155,7 +155,7 @@
                               <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal"></button>
                                   <h4 class="modal-title">Anda Ingin Menghapus Materi <?php echo $mtr->nama; ?> ?</h4>
-                              <?php echo form_open("kelolamateri/delete/$mtr->materi_id"); ?>
+                              <?php echo form_open("materi/delete/$mtr->materi_id"); ?>
                                   <input type="hidden" class="form-control" name="id" value="<?php echo $mtr->materi_id; ?>">
                               </div>
                               <div class="modal-footer">

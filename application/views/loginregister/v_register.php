@@ -34,7 +34,7 @@
         <input type="text" class="input1 input-top" name="firstname" placeholder="First Name" required/>
         <input type="text" class="input1 input-top" name="lastname" placeholder="Last Name" required/>
     </div>
-    <div id="input-boxes">
+    <div id="input-boxes" style="width: 338px;">
         <input type="text" class="input" name="username" placeholder="Username" required/></br>
         <input type="email" class="input" name="email" placeholder="Email" required/></br>
         <input type="password" class="input" name="password" placeholder="Password" required/></br>

@@ -38,5 +38,10 @@ class M_comment extends CI_Model {
     }
   }
 
+  public function get_total_comment(){
+    $this->db->select('comment.id_post, count(*)');
+    $this->db->from('comment');
+    $this->db->join('post','post.id_post = ');
+  }
 
 }
