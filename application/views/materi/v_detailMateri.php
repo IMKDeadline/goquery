@@ -92,8 +92,8 @@ foreach ($materi as $mtr) {
                 <p><?= $mtr->isi; ?></p>
             </div>
 					</div>
-      <?php } ?>
       </div>
+    <?php } ?>
       <div class="col-md-3">
         <div class="col-lg-12 middle-top">
           <div class="row jenis" style="border-bottom: ridge;">

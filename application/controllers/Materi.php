@@ -83,9 +83,15 @@ class Materi extends CI_Controller {
 
 	public function view_detailMateri(){
 		$slug = $this->uri->segment(2);
-		$data = array(
-			'materi' => $this->Model_Materi->get_detail($slug)
-		);
-		$this->load->view('materi/v_detailMateri',$data);
+		$materi = $this->Model_Materi->get_detail($slug);
+		if($materi){
+			$data = array(
+				'materi' => $materi
+			);
+			$this->load->view('materi/v_detailMateri',$data);
+		}else{
+			echo "404 Not Found";
+		}
+
 	}
 }
