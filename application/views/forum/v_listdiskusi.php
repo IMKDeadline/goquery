@@ -170,7 +170,7 @@
                 if (isset($comment[$key]->total) == NULL){
                   echo '<span class="comment">0</span>';
                 }else{
-                  if ($comment[$key]->id_post == $post->id_post){
+                  if ($post->id_post == $comment[$key]->id_post){
                     echo '<span class="comment">'. $comment[$key]->total .'</span>';
                   }else {
                     echo '<span class="comment">0</span>';

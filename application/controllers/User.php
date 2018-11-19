@@ -92,6 +92,10 @@ class User extends CI_Controller {
 		$this->load->view('loginregister/v_register');
 	}
 
+	public function view_dashboard(){
+		$this->load->view('dashboard');
+	}
+
 	public function logout(){
 	  $this->session->sess_destroy();
 		$this->session->set_flashdata('login_status', 'logout');
