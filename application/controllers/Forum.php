@@ -88,8 +88,17 @@ class Forum extends CI_Controller {
 
   public function view_diskusi(){
     $data = array(
-      'post' => $this->M_forum->get_all_post()
+      'post' => $this->M_forum->get_diskusi(),
+      'comment' => $this->M_comment->get_total_comment()
     );
-    $this->load->view('forum/v_listdiskusi',$data);
+    echo "<pre>";
+    var_dump($data['post']);
+    echo "</pre>";
+
+    echo "<pre>";
+    var_dump($data['comment']);
+    echo "</pre>";
+
+    // $this->load->view('forum/v_listdiskusi',$data);
   }
 }
