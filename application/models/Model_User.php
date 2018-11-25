@@ -8,6 +8,22 @@ class Model_User extends CI_Model
     $this->load->helper(array('form', 'url'));
   }
 
+	public function get_all_user()
+	{
+		$query = $this->db->order_by('first_name','DESC')->get('users');
+		return $query->result();
+	}
+
+	public function get_user($id){
+        $query = $this->db->where('username', $id)->order_by('first_name','DESC')->get('users');
+		if($query->num_rows() == 0){
+			return null;
+		}
+		else{
+			return $query->result();
+		}
+    }
+
 	public function daftar_user($data){
     $this->db->insert('users',$data);
     return true;
@@ -26,17 +42,50 @@ class Model_User extends CI_Model
       }
     }
 
-	public function update_user($data){
-		$username = $this->session->users['username'];
-		$this->db->where('username', $username);
+	public function edit_user($data){
+        $config['upload_path']          = 'upload/images';
+        $config['allowed_types']        = 'jpeg|jpg|png';
+        $config['max_size']             = '5000';
+        $config['max_width']            = '5000';
+        $config['max_height']           = '5000';
 
-		$result = $this->db->update('users',$data);
-		if ($result){
-			return TRUE;
-		}else {
-			return FALSE;
-		}
-	}
+        $this->load->library('upload', $config);
+        if ( !$this->upload->do_upload('berkas')){
+            $id = $this->session->userdata['username'];
+            $table = 'users';
+            $param = array (
+							'first_name' => $this->input->post('first_name'),
+							'last_name' => $this->input->post('last_name'),
+							'username' => $this->input->post('username'),
+							'email' => $this->input->post('email'),
+						);
+            $this->db->where('username', $id);
+            $update = $this->db->update($table,$param);
+            if ($update){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        }else{
+            $id = $this->session->userdata['username'];
+            $table = 'users';
+            $gambar = $this->upload->data('file_name');
+            $param = array (
+									'first_name' => $this->input->post('first_name'),
+									'last_name' => $this->input->post('last_name'),
+									'username' => $this->input->post('username'),
+									'email' => $this->input->post('email'),
+                	'images' => $gambar
+            );
+            $this->db->where('username', $id);
+            $update = $this->db->update($table,$param);
+            if ($update){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        }
+    }
 
 	public function delete_user($username){
 		$this->db->where('username', $username);

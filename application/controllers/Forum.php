@@ -91,14 +91,14 @@ class Forum extends CI_Controller {
       'post' => $this->M_forum->get_diskusi(),
       'comment' => $this->M_comment->get_total_comment()
     );
-    echo "<pre>";
-    var_dump($data['post']);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($data['post']);
+    // echo "</pre>";
+    //
+    // echo "<pre>";
+    // var_dump($data['comment']);
+    // echo "</pre>";
 
-    echo "<pre>";
-    var_dump($data['comment']);
-    echo "</pre>";
-
-    // $this->load->view('forum/v_listdiskusi',$data);
+    $this->load->view('forum/v_listdiskusi',$data);
   }
 }
