@@ -46,6 +46,15 @@ class M_forum extends CI_Model {
     }
   }
 
+  public function get_all_post(){
+    $data = $this->db->get('post');
+    if($data->num_rows() > 0){
+      return $data->result();
+    }else{
+      return false;
+    }
+  }
+
   public function get_id_post($slug){
     $data = $this->db->select('id_post')
                     ->where('slug', $slug)

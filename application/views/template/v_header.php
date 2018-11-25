@@ -6,6 +6,8 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css?family=Nunito|Poppins:500|Ubuntu:500" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Lato:400,900" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Nunito|Poppins:500|Ubuntu:500" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Lato:400,900" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -49,6 +51,173 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
+      #header .navbarr .logo img{
+        width:40px;
+      }
+
+      #header .navbar-brand {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 1000;
+      }
+
+      #header .navbarr .navbar-nav li a {
+        color: white;
+        padding: 0px 5px;
+        font-weight: normal;
+      }
+
+      #header .navbarr li a:hover {
+        color: #00b3fe;
+      }
+
+      #header .navbar-nav li {
+        margin: auto;
+        margin-right: 10px;
+      }
+
+      #header .navbar-nav .active li a:focus{
+        color: #00b3fe;
+        background-color: transparent;
+      }
+
+      #header .navbarr .navbar-toggle .icon-bar {
+        background-color: #fff;
+      }
+
+      #header .dropdown p{
+        margin-left: 25px;
+      }
+
+      #header .dropdown .btn{
+        margin-left:35px;
+      }
+      .judul  {
+        padding: 30px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .judul span{
+        color: #b2bec3;
+        font-size: 13px;
+      }
+
+      .middle-top {
+        background-color: #f5f6fa;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .middle {
+        background-color:  #f5f6fa;
+      }
+      #list main .event {
+      overflow: hidden;
+      position: relative;
+      background: #fff;
+      -webkit-box-shadow:rgba(0,0,0,0.38) 1px 1px 7px 0;
+      box-shadow: rgba(0,0,0,0.38) 1px 1px 7px 0;
+      padding: 0;
+      margin-bottom: 20px;
+      min-height: 300px;
+      }
+
+      #list main .event .top{
+      background: #833471;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      line-height: 1;
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      }
+
+      #list main .event .middle{
+      font-family: proxima-nova;
+      padding : 15px;
+      min-height: 200px;
+      background-color: white;
+      }
+      #list main .event .bottom{
+      border-top: 1px solid #dee5eb;
+      min-height: 70px;
+      overflow: hidden;
+      width: 100%;
+      }
+
+      #list main .event .middle h4{
+      font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: 600px;
+      font-size: 22px;
+      }
+
+      #list main .event img{
+      width: 20px;
+      float: right;
+      }
+
+      #list main .event .bottom .time{
+      font-size: 12px;
+      border-right: 1px solid #dee5eb;
+      border-bottom: 1px solid #dee5eb;
+      text-align: center;
+      color: rgba(85,104,115,0.72);
+      text-transform: uppercase;
+      line-height: 20px;
+      font-weight: bold;
+      display: inline-block;
+      box-sizing: border-box;
+      float: left;
+      width: 20%;
+      height: 100px;
+      padding-top: 20px;
+
+      }
+      #list main .event .bottom .time .number{
+      font-size: 30px;
+      text-align: center;
+      color: black;
+      }
+      #list main .event .bottom .relawan{
+      font-size: 15px;
+      width: 80%;
+      float: right;
+      position: relative;
+      border-bottom: 1px solid #dee5eb;
+      color: #71787d;
+      line-height: 20px;
+      min-height: 50px;
+      }
+
+      #list main .event .bottom .lokasi{
+      font-size: 10px;
+      float: right;
+      text-align: center;
+      }
+
+      #list main .event a{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      }
+
+      #list main .event a:hover{text-decoration: none;}
+
+      #list main .event .top p{
+      margin-bottom: 0;
+      }
+
+      #list .deskripsi{
+      font-size: 20px;
+      color: #71787d;
+      }
+
+      #list .date{
+      font-size: 13px;
+      }
+
+
     </style>
   </head>
   <body id="header">

@@ -12,9 +12,16 @@ class Forum extends CI_Controller {
 
   public function index()
 	{
-    $data = array('all_post' => $this->M_forum->get_all_post());
+    // $data = array('all_post' => $this->M_forum->get_all_post());
+    // $this->load->view('template/v_header', $data);
+    // $this->load->view('forum/v_forum_index');
+    // $this->load->view('template/v_footer');
+    $data = array(
+      'post' => $this->M_forum->get_diskusi(),
+      'comment' => $this->M_comment->get_total_comment()
+    );
     $this->load->view('template/v_header', $data);
-    $this->load->view('forum/v_forum_index');
+    $this->load->view('forum/v_listdiskusi');
     $this->load->view('template/v_footer');
   }
 
@@ -91,14 +98,14 @@ class Forum extends CI_Controller {
       'post' => $this->M_forum->get_diskusi(),
       'comment' => $this->M_comment->get_total_comment()
     );
-    echo "<pre>";
-    var_dump($data['post']);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($data['post']);
+    // echo "</pre>";
+    //
+    // echo "<pre>";
+    // var_dump($data['comment']);
+    // echo "</pre>";
 
-    echo "<pre>";
-    var_dump($data['comment']);
-    echo "</pre>";
-
-    // $this->load->view('forum/v_listdiskusi',$data);
+    $this->load->view('forum/v_listdiskusi',$data);
   }
 }

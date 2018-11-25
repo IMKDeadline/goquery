@@ -4,9 +4,9 @@
       <div class="pt-5 pb-2">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
+            <li class="breadcrumb-item"><a href="<?=base_url('')?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?=base_url('forum')?>">Forum</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><?=$post->judul?></li>
           </ol>
         </nav>
       </div>
@@ -52,7 +52,7 @@
                   <p class="card-text"><?=$comment->isi?></p>
                   <div class="card-footer text-muted">
                     <?php if($comment->created_by == $this->session->userdata('username')){
-                      echo '<a href="<?=base_url("comment/'.$comment->id_comment.'/edit")?>"><i class="fas fa-edit"></i></a>';
+                      echo '<a href="'.base_url("'omment/$comment->id_comment/edit").'"><i class="fas fa-edit"></i></a>';
                     } ?>
                     <?= 'dipost saat '.$comment->tanggal?>
                   </div>
