@@ -49,6 +49,132 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
+
+      .judul  {
+        padding: 30px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .judul span{
+        color: #b2bec3;
+        font-size: 13px;
+      }
+
+      .middle-top {
+        background-color: #f5f6fa;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .middle {
+        background-color:  #f5f6fa;
+      }
+       main .event {
+      overflow: hidden;
+      position: relative;
+      background: #fff;
+      -webkit-box-shadow:rgba(0,0,0,0.38) 1px 1px 7px 0;
+      box-shadow: rgba(0,0,0,0.38) 1px 1px 7px 0;
+      padding: 0;
+      margin-bottom: 20px;
+      min-height: 300px;
+      }
+
+       main .event .top{
+      background: #833471;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      line-height: 1;
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      }
+
+       main .event .middle{
+      font-family: proxima-nova;
+      padding : 15px;
+      min-height: 200px;
+      background-color: white;
+      }
+       main .event .bottom{
+      border-top: 1px solid #dee5eb;
+      min-height: 70px;
+      overflow: hidden;
+      width: 100%;
+      }
+
+       main .event .middle h4{
+      font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: 600px;
+      font-size: 22px;
+      }
+
+      main .event img{
+      width: 20px;
+      float: right;
+      }
+
+       main .event .bottom .time{
+      font-size: 12px;
+      border-right: 1px solid #dee5eb;
+      border-bottom: 1px solid #dee5eb;
+      text-align: center;
+      color: rgba(85,104,115,0.72);
+      text-transform: uppercase;
+      line-height: 20px;
+      font-weight: bold;
+      display: inline-block;
+      box-sizing: border-box;
+      float: left;
+      width: 20%;
+      height: 100px;
+      padding-top: 20px;
+
+      }
+       main .event .bottom .time .number{
+      font-size: 30px;
+      text-align: center;
+      color: black;
+      }
+       main .event .bottom .relawan{
+      font-size: 15px;
+      width: 80%;
+      float: right;
+      position: relative;
+      border-bottom: 1px solid #dee5eb;
+      color: #71787d;
+      line-height: 20px;
+      min-height: 50px;
+      }
+
+       main .event .bottom .lokasi{
+      font-size: 10px;
+      float: right;
+      text-align: center;
+      }
+
+       main .event a{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      }
+
+       main .event a:hover{text-decoration: none;}
+
+       main .event .top p{
+      margin-bottom: 0;
+      }
+
+       .deskripsi{
+      font-size: 20px;
+      color: #71787d;
+      }
+
+       .date{
+      font-size: 13px;
+      }
     </style>
   </head>
   <body id="header">

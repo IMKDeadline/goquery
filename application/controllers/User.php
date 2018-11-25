@@ -21,7 +21,6 @@ class User extends CI_Controller {
 			'password' => md5($this->input->post('password')),
 			'tanggal_lahir' => $tanggal,
 			'tipe' => 'member',
-			'foto' => 'gambar-orang.jpg'
 		);
 		$username = $this->input->post('username');
 		$cek = $this->db->query("SELECT username FROM users WHERE username = '$username'");

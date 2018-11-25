@@ -17,7 +17,7 @@
         </div>
         <ul class="list-group list-group-flush card-middle">
           <li class="list-group-item"><a href="#">Lihat Profil</a></li>
-          <li class="list-group-item"><a href="#">Edit Profil</a></li>
+          <li class="list-group-item"><a href="view_editprofil">Edit Profil</a></li>
         </ul>
       </div>
     </div>
@@ -26,18 +26,22 @@
         <div class="tittle">
           <h5>Lihat Profil</h5>
         </div>
+        <?php foreach ($user as $usr) { ?>
         <div class="row">
           <div class="col-md-12 gambar">
-            <img src="<?=base_url()?>assets/images/icon-user.png">
+            <?php
+            if ($usr->images == NULL) {
+              echo '<img src="'.base_url().'assets/images/icon-user.png">';
+            }else {
+              echo '<img src="'.base_url().'upload/images/'. $usr->images .'">';
+            }
+            ?>
           </div>
         </div>
-
-        <?php foreach ($user as $usr) { ?>
-
-        <div class="bg-informasi">
+        <div class="bg-informasi py-4">
           <div class="row">
             <div class="col-md-5">
-              <h5>First Name : </h5>
+              <h5>Nama Awal : </h5>
             </div>
             <div class="col-md-7">
               <p><?= $usr->first_name ?></p>
@@ -45,7 +49,7 @@
           </div>
           <div class="row">
             <div class="col-md-5">
-              <h5>Last Name : </h5>
+              <h5>Nama Akhir : </h5>
             </div>
             <div class="col-md-7">
               <p><?= $usr->last_name ?></p>
