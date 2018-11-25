@@ -20,7 +20,8 @@ class User extends CI_Controller {
 			'email' => $this->input->post('email'),
 			'password' => md5($this->input->post('password')),
 			'tanggal_lahir' => $tanggal,
-			'tipe' => 'member'
+			'tipe' => 'member',
+			'foto' => 'gambar-orang.jpg'
 		);
 		$username = $this->input->post('username');
 		$cek = $this->db->query("SELECT username FROM users WHERE username = '$username'");
@@ -36,23 +37,16 @@ class User extends CI_Controller {
 		}
   }
 
-	public function edit(){
-		$cek = $this->input->post(null,TRUE);
-		$data = array (
-			'firstname' => $this->input->post('firstname'),
-			'lastname' => $this->input->post('lastname'),
-			'username' => $this->input->post('username'),
-			'email' => $this->input->post('email'),
-			'password' => $this->input->post('password')
-		);
-		$edit = $this->Model_User->update_user($data);
-		if($cek == TRUE){
-			if($edit==TRUE){
-				$this->load->view('view_profile');
-			}
-		} else {
-			echo "error";
-		}
+	public function edit()
+	{
+		$data = $this->input->post(null,TRUE);
+		$result = $this->Model_User->edit_user($data);
+		if($result==TRUE){
+	    	$this->session->set_flashdata('alert', 'sukses_edit');
+	    	redirect('User/view_editprofil');
+	  	}else{
+	    	echo "<script>alert('Gagal Edit Data');</script>";
+	 	}
 	}
 
 	public function delete(){
@@ -90,6 +84,22 @@ class User extends CI_Controller {
 	public function view_register()
 	{
 		$this->load->view('loginregister/v_register');
+	}
+
+	public function view_editprofil(){
+		$id = $this->session->userdata['username'];
+		$data = array(
+			'user' => $this->Model_User->get_user($id)
+		);
+		$this->load->view('user/v_editprofil',$data);
+	}
+
+	public function view_lihatprofil(){
+		$id = $this->session->userdata['username'];
+		$data = array(
+			'user' => $this->Model_User->get_user($id)
+		);
+		$this->load->view('user/v_lihatprofil',$data);
 	}
 
 	public function view_dashboard(){
