@@ -113,4 +113,8 @@ class User extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect(site_url('User/view_login'));
 	}
+
+	public function home(){
+		$this->load->view('home');
+	}
 }
