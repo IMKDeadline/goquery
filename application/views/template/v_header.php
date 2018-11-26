@@ -51,6 +51,7 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
+<<<<<<< HEAD
       #header .navbarr .logo img{
         width:40px;
       }
@@ -91,6 +92,9 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
+=======
+
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       .judul  {
         padding: 30px;
         font-family: 'Ubuntu', sans-serif;
@@ -108,7 +112,11 @@
       .middle {
         background-color:  #f5f6fa;
       }
+<<<<<<< HEAD
       #list main .event {
+=======
+       main .event {
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       overflow: hidden;
       position: relative;
       background: #fff;
@@ -119,7 +127,11 @@
       min-height: 300px;
       }
 
+<<<<<<< HEAD
       #list main .event .top{
+=======
+       main .event .top{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       background: #833471;
       color: white;
       text-decoration: none;
@@ -130,31 +142,51 @@
       font-size: 12px;
       }
 
+<<<<<<< HEAD
       #list main .event .middle{
+=======
+       main .event .middle{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-family: proxima-nova;
       padding : 15px;
       min-height: 200px;
       background-color: white;
       }
+<<<<<<< HEAD
       #list main .event .bottom{
+=======
+       main .event .bottom{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       border-top: 1px solid #dee5eb;
       min-height: 70px;
       overflow: hidden;
       width: 100%;
       }
 
+<<<<<<< HEAD
       #list main .event .middle h4{
+=======
+       main .event .middle h4{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
       font-weight: 600px;
       font-size: 22px;
       }
 
+<<<<<<< HEAD
       #list main .event img{
+=======
+      main .event img{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       width: 20px;
       float: right;
       }
 
+<<<<<<< HEAD
       #list main .event .bottom .time{
+=======
+       main .event .bottom .time{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 12px;
       border-right: 1px solid #dee5eb;
       border-bottom: 1px solid #dee5eb;
@@ -171,12 +203,20 @@
       padding-top: 20px;
 
       }
+<<<<<<< HEAD
       #list main .event .bottom .time .number{
+=======
+       main .event .bottom .time .number{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 30px;
       text-align: center;
       color: black;
       }
+<<<<<<< HEAD
       #list main .event .bottom .relawan{
+=======
+       main .event .bottom .relawan{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 15px;
       width: 80%;
       float: right;
@@ -187,13 +227,21 @@
       min-height: 50px;
       }
 
+<<<<<<< HEAD
       #list main .event .bottom .lokasi{
+=======
+       main .event .bottom .lokasi{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 10px;
       float: right;
       text-align: center;
       }
 
+<<<<<<< HEAD
       #list main .event a{
+=======
+       main .event a{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       position: absolute;
       height: 100%;
       width: 100%;
@@ -202,6 +250,7 @@
       left: 0;
       }
 
+<<<<<<< HEAD
       #list main .event a:hover{text-decoration: none;}
 
       #list main .event .top p{
@@ -209,15 +258,30 @@
       }
 
       #list .deskripsi{
+=======
+       main .event a:hover{text-decoration: none;}
+
+       main .event .top p{
+      margin-bottom: 0;
+      }
+
+       .deskripsi{
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 20px;
       color: #71787d;
       }
 
+<<<<<<< HEAD
       #list .date{
       font-size: 13px;
       }
 
 
+=======
+       .date{
+      font-size: 13px;
+      }
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
     </style>
   </head>
   <body id="header">

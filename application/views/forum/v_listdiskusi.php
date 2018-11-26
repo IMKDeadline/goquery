@@ -1,4 +1,8 @@
+<<<<<<< HEAD
   <!--Judul-->
+=======
+<!--Judul-->
+>>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
   <div class="container judul">
     <span>Forum</span>
     <span>></span>

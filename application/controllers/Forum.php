@@ -16,13 +16,19 @@ class Forum extends CI_Controller {
     // $this->load->view('template/v_header', $data);
     // $this->load->view('forum/v_forum_index');
     // $this->load->view('template/v_footer');
-    $data = array(
-      'post' => $this->M_forum->get_diskusi(),
-      'comment' => $this->M_comment->get_total_comment()
-    );
-    $this->load->view('template/v_header', $data);
-    $this->load->view('forum/v_listdiskusi');
-    $this->load->view('template/v_footer');
+      $data = array(
+        'post' => $this->M_forum->get_diskusi(),
+        'comment' => $this->M_comment->get_total_comment()
+      );
+      // echo "<pre>";
+      // var_dump($data['post']);
+      // echo "</pre>";
+      //
+      // echo "<pre>";
+      // var_dump($data['comment']);
+      // echo "</pre>";
+      $this->load->view('template/v_header',$data);
+      $this->load->view('forum/v_listdiskusi');
   }
 
   public function detail_post(){

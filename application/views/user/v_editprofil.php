@@ -21,7 +21,7 @@
           Pengaturan Akun
         </div>
         <ul class="list-group list-group-flush card-middle">
-          <li class="list-group-item"><a href="#">Lihat Profil</a></li>
+          <li class="list-group-item"><a href="view_lihatprofil">Lihat Profil</a></li>
           <li class="list-group-item"><a href="#">Edit Profil</a></li>
         </ul>
       </div>
@@ -41,7 +41,13 @@
           <?php foreach ($user as $usr) { ?>
           <div class="row">
             <div class="col-md-5 gambar">
-              <img src="<?=base_url()?>upload/images/<?= $usr->images?>">
+              <?php
+              if ($usr->images == NULL) {
+                echo '<img src="'.base_url().'assets/images/icon-user.png">';
+              }else {
+                echo '<img src="'.base_url().'upload/images/'. $usr->images .'">';
+              }
+              ?>
             </div>
             <div class="col-md-7">
               <p>Upload foto profile anda.</p>
@@ -50,7 +56,7 @@
           </div>
           <div class="row formm">
             <div class="col-md-5">
-              <label>Fisrt Name</label>
+              <label>Nama Akhir</label>
             </div>
             <div class="col-md-7">
               <input type="text" name="first_name" value="<?= $usr->first_name ?>" class="form-control">
@@ -58,7 +64,7 @@
           </div>
           <div class="row formm">
             <div class="col-md-5">
-              <label>Last Name</label>
+              <label>Nama Akhir</label>
             </div>
             <div class="col-md-7">
               <input type="text" name="last_name" value="<?= $usr->last_name ?>" class="form-control">
@@ -89,7 +95,7 @@
           </div>
           <div class="row">
               <div class="col-md-5 btnKlik">
-                <input type="submit" name="Edit" value="Edit Data" class="btn btn-success">
+                <input type="submit" name="Edit" value="Edit Profil" class="btn btn-danger">
               </div>
           </div>
           <?= form_close() ?>
