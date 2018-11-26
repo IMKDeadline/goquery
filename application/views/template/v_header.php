@@ -8,6 +8,13 @@
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Lato:400,900" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Nunito|Poppins:500|Ubuntu:500" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Lato:400,900" rel="stylesheet">
+      <link href="<?=base_url()?>assets/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+      <!-- Custom styles for this template -->
+      <link href="<?=base_url()?>assets/css/landing-page.min.css" rel="stylesheet">
+
+
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -51,7 +58,6 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
-<<<<<<< HEAD
       #header .navbarr .logo img{
         width:40px;
       }
@@ -92,9 +98,6 @@
       #header .dropdown .btn{
         margin-left:35px;
       }
-=======
-
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       .judul  {
         padding: 30px;
         font-family: 'Ubuntu', sans-serif;
@@ -112,11 +115,7 @@
       .middle {
         background-color:  #f5f6fa;
       }
-<<<<<<< HEAD
-      #list main .event {
-=======
        main .event {
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       overflow: hidden;
       position: relative;
       background: #fff;
@@ -126,12 +125,7 @@
       margin-bottom: 20px;
       min-height: 300px;
       }
-
-<<<<<<< HEAD
-      #list main .event .top{
-=======
-       main .event .top{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
+      main .event .top{
       background: #833471;
       color: white;
       text-decoration: none;
@@ -141,52 +135,28 @@
       font-weight: 600;
       font-size: 12px;
       }
-
-<<<<<<< HEAD
-      #list main .event .middle{
-=======
-       main .event .middle{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
+      main .event .middle{
       font-family: proxima-nova;
       padding : 15px;
       min-height: 200px;
       background-color: white;
       }
-<<<<<<< HEAD
-      #list main .event .bottom{
-=======
        main .event .bottom{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       border-top: 1px solid #dee5eb;
       min-height: 70px;
       overflow: hidden;
       width: 100%;
       }
-
-<<<<<<< HEAD
-      #list main .event .middle h4{
-=======
        main .event .middle h4{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
       font-weight: 600px;
       font-size: 22px;
       }
-
-<<<<<<< HEAD
-      #list main .event img{
-=======
       main .event img{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       width: 20px;
       float: right;
       }
-
-<<<<<<< HEAD
-      #list main .event .bottom .time{
-=======
        main .event .bottom .time{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 12px;
       border-right: 1px solid #dee5eb;
       border-bottom: 1px solid #dee5eb;
@@ -203,20 +173,12 @@
       padding-top: 20px;
 
       }
-<<<<<<< HEAD
-      #list main .event .bottom .time .number{
-=======
-       main .event .bottom .time .number{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
+      main .event .bottom .time .number{
       font-size: 30px;
       text-align: center;
       color: black;
       }
-<<<<<<< HEAD
-      #list main .event .bottom .relawan{
-=======
-       main .event .bottom .relawan{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
+      main .event .bottom .relawan{
       font-size: 15px;
       width: 80%;
       float: right;
@@ -227,21 +189,14 @@
       min-height: 50px;
       }
 
-<<<<<<< HEAD
       #list main .event .bottom .lokasi{
-=======
        main .event .bottom .lokasi{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 10px;
       float: right;
       text-align: center;
       }
-
-<<<<<<< HEAD
       #list main .event a{
-=======
        main .event a{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       position: absolute;
       height: 100%;
       width: 100%;
@@ -250,38 +205,19 @@
       left: 0;
       }
 
-<<<<<<< HEAD
       #list main .event a:hover{text-decoration: none;}
 
       #list main .event .top p{
       margin-bottom: 0;
       }
-
-      #list .deskripsi{
-=======
-       main .event a:hover{text-decoration: none;}
-
-       main .event .top p{
-      margin-bottom: 0;
-      }
-
        .deskripsi{
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
       font-size: 20px;
       color: #71787d;
       }
-
-<<<<<<< HEAD
-      #list .date{
-      font-size: 13px;
-      }
-
-
-=======
        .date{
       font-size: 13px;
       }
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
+
     </style>
   </head>
   <body id="header">
@@ -294,24 +230,21 @@
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <li><a href=""><i class="fas fa-home"> Home</i></a></li>
-            <li><a href=""><i class="fab fa-discourse"> Discussion</i></a></li>
-            <li><a href=""><i class="fas fa-bell"> Notification</i></a></li>
-            <li class="dropdown">
-    					<a href="#" data-toggle="dropdown"><i class="fas fa-user"> Account</i></a>
-    					<ul id="login-dp" class="dropdown-menu">
-    						<li>
-    							<div class="row">
-    								<div class="col-md-12">
-    									<p class="text-left"><strong>Fauzan Rahman</strong></p>
-    								</div>
-    								<div class="bottom text-center">
-    									<a href="<?php echo site_url('control/logout_customer')?>" class="btn btn-danger btn-block">Logout</a>
-    								</div>
-    							</div>
-    						</li>
-    					</ul>
-    				</li>
+            <li><a href="<?=base_url()?>"><i class="fas fa-home"> Home</i></a></li>
+            <li><a href="<?=base_url('forum')?>"><i class="fab fa-discourse"> Discussion</i></a></li>
+            <li><a href="<?=base_url('materi')?>"><i class="fas fa-book-open"> Lesson</i></a></li>
+            <?php if ($this->session->userdata('username')){ ?>
+              <li class="dropdown">
+      					<a href="#" data-toggle="dropdown"><i class="fas fa-user">  <?=$this->session->userdata('username')?></i></a>
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" style="color:#000;" href="<?=base_url('dashboard')?>">Dashboard</a>
+                  <a class="dropdown-item text-danger" style="color:#000;" href="<?=base_url('logout')?>">Logout</a>
+                </div>
+      				</li>
+            <?php }else{ ?>
+              <li><a href="<?=base_url('register')?>" class="btn btn-primary p-1">Register</a>
+                  <a href="<?=base_url('login')?>" class="btn btn-success p-1">Login</a> </li>
+            <?php   } ?>
           </div>
         </div>
       </div>

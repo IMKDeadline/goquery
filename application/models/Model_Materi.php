@@ -53,4 +53,15 @@ class Model_Materi extends CI_Model
 			return TRUE;
 		}
 	}
+
+	public function get_latest_materi(){
+		$query = $this->db->order_by('materi_id', 'desc')
+							->limit(6)
+							->get('materi');
+	  if($query->num_rows() > 0){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
 }

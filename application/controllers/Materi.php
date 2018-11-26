@@ -78,7 +78,8 @@ class Materi extends CI_Controller {
 		$data = array(
 			'materi' => $this->Model_Materi->get_all_materi()
 		);
-		$this->load->view('materi/v_Materi',$data);
+		$this->load->view('template/v_header', $data);
+		$this->load->view('materi/v_Materi');
 	}
 
 	public function view_detailMateri(){
@@ -88,7 +89,8 @@ class Materi extends CI_Controller {
 			$data = array(
 				'materi' => $materi
 			);
-			$this->load->view('materi/v_detailMateri',$data);
+			$this->load->view('template/v_header', $data);
+			$this->load->view('materi/v_detailMateri');
 		}else{
 			echo "404 Not Found";
 		}

@@ -5,24 +5,24 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/style.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave|Ubuntu" rel="stylesheet">
 </head>
 <body id="view">
 
 <div class="container tengah">
   <div class="row">
     <div class="col-md-3 navbarr text-center px-1">
-      <!-- <nav class="nav flex-column">
-        <a class="nav-link active" href="menuProfil">Lihat profil</a>
-        <a class="nav-link" href="menuEdit ">Edit Profil</a>
-        <a class="nav-link" href="#">Ubah Sandi</a>
-      </nav> -->
       <div class="card" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card-header" style="font-family: 'Sedgwick Ave', cursive;">
+          Dashboard
+        </div>
+        <div class="card-header" style="background-color: #303952; font-family: 'Quicksand', sans-serif;">
           Pengaturan Akun
         </div>
         <ul class="list-group list-group-flush card-middle">
-          <li class="list-group-item"><a href="view_lihatprofil">Lihat Profil</a></li>
-          <li class="list-group-item"><a href="#">Edit Profil</a></li>
+          <li class="list-group-item"><a href="view_lihatprofil"><i class="fas fa-user"> Lihat Profil</i> </a></li>
+          <li class="list-group-item"><a href="#"><i class="fas fa-user-edit"> Edit Profil</i> </a></li>
         </ul>
       </div>
     </div>
@@ -105,6 +105,5 @@
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>

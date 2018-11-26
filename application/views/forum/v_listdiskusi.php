@@ -1,8 +1,4 @@
-<<<<<<< HEAD
   <!--Judul-->
-=======
-<!--Judul-->
->>>>>>> fbf2eb7faa38451dc6e23210ffe58798d28b0a37
   <div class="container judul">
     <span>Forum</span>
     <span>></span>
@@ -17,11 +13,15 @@
 <main>
 <div class="container-fluid middle ">
   <div class="container">
+    <div class="row px-3 pt-5 mb-2">
+      <a href="<?=base_url('forum/create')?>" class="btn btn-danger"><i class="fas fa-plus"></i></a>
+    </div>
     <div class="row">
       <?php
 					foreach ($post as $key => $post ) {
 				?>
 				<div class="col-sm-12 col-md-5 col-lg-4 py-4">
+         <a href="<?=base_url('forum/'.$post->slug.'')?>">
 					<div class="col-12 event">
 						<div class="top post">
 							<span>Forum Diskusi</span>
@@ -58,8 +58,8 @@
             <?php
 								$id = $post->id_post;
 						?>
-						<a href="tampilDetail/<?= $id ?>"></a>
 					</div>
+          </a>
 				</div>
       <?php } ?>
 		</div>

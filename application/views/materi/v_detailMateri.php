@@ -63,7 +63,6 @@
     </style>
   </head>
 <body>
-<?php include "header.php" ?>
 
 <!--Judul-->
 <?php

@@ -20,6 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+				$this->load->model('Model_Materi');
+				$data = ['all_materi' => $this->Model_Materi->get_latest_materi()];
+				$this->load->view('template/v_header', $data);
 				$this->load->view('v_home');
 	}
 }

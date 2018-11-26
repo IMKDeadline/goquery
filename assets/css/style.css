@@ -528,7 +528,6 @@ background-color: #f1f2f6;
 }
 
 #view .bg-container {
-	width: 1000px;
 	height: auto;
 	margin-top: 15px;
 	background-color: white;
@@ -540,6 +539,9 @@ background-color: #f1f2f6;
 	background-color: #487eb0;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	font-family: 'Baloo Thambi', cursive;
+	font-size: 2rem;
+
 }
 
 #view .bg-container h5{
@@ -551,6 +553,24 @@ background-color: #f1f2f6;
 #view .bg-container .info{
 	margin: 30px;
 	font-size: 14px;
+}
+
+#view .bg-container .judul{
+	margin: 30px;
+	font-size: 15px;
+}
+
+#view .informasi .atas {
+	text-align: center;
+}
+
+#view .informasi h6{
+	font-weight: bold;
+}
+
+#view .test{
+	background-color: black;
+	padding:
 }
 
 #view .bg-container .info1{
@@ -582,6 +602,7 @@ background-color: #f1f2f6;
 	border-bottom: solid #ecf0f1;
 	margin-bottom: 30px;
 }
+
 
 #view .bg-container .btnKlik{
 	margin-left: 25px;
@@ -629,6 +650,7 @@ background-color: #f1f2f6;
 	background-color: #487eb0;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 #profile .bg-container h5{

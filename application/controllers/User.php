@@ -102,7 +102,7 @@ class User extends CI_Controller {
 	}
 
 	public function view_dashboard(){
-		$this->load->view('dashboard');
+		$this->load->view('user/v_dashboard');
 	}
 
 	public function logout(){

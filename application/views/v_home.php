@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Landing Page - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <!-- <link href="<?=base_url()?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
-    <link href="<?=base_url()?>assets/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>assets/css/landing-page.min.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <ul style="list-style-type:none; margin:0; padding:0;">
-          <li style="float:left;"><a class="navbar-brand" href="<?=base_url()?>assets/#"><img src="<?=base_url('assets/img/logo.png')?>" width="3%" height="3%"> GoQuery</a></li>
-          <li style="float:left;"><a class="btn btn-primary" href="<?=base_url()?>assets/#">Sign In</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <!-- Masthead -->
     <header class="masthead text-white text-center">
       <div class="overlay"></div>
@@ -46,13 +7,13 @@
             <h1 class="mb-5">Aplikasi pembelajaran query berbasis website. Pelajari lebih dalam mengenai query dalam database di GoQuery.com</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-3 offset-md-4">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+              <?php if (!$this->session->userdata('username')): ?>
+                <div class="form-row">
+                  <div class="col-12 col-md-3 offset-md-4">
+                    <a href="<?=base_url('register')?>" class="btn btn-block btn-lg btn-primary">Sign up!</a>
+                  </div>
                 </div>
-              </div>
-            </form>
+              <?php endif; ?>
           </div>
         </div>
       </div>
@@ -147,11 +108,9 @@
             <div class="testimonial-item mx-auto mb-5 mb-lg-0 text-justify">
               <h4>Latest Posts</h4>
               <div class="hline"></div>
-              <p><a href="single-post.html">Query Dasar</a></p>
-              <p><a href="single-post.html">Join</a></p>
-              <p><a href="single-post.html">Query Agregate</a></p>
-              <p><a href="single-post.html">Sub Query</a></p>
-              <p><a href="single-post.html">Contoh Kasus Query</a></p>
+              <?php foreach ($all_materi as $materi): ?>
+                <p><a href="<?=base_url('materi/'.$materi->slug)?>"><?=$materi->nama?></a></p>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -218,10 +177,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="<?=base_url()?>/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="<?=base_url()?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
