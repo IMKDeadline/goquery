@@ -14,6 +14,15 @@
 </div>
 
 <div class="container-fluid middle">
+  
+  <?php if ($this->session->flashdata('insert_comment') == 'success' ): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <p>Komentar anda berhasil dipost</p>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <?php endif; ?>
   <div class="container p-5">
     <div class="row">
       <div class="col-md-9 col-sm-9 col-12">

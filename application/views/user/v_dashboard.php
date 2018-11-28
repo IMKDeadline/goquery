@@ -16,23 +16,30 @@
     <div class="col-md-3 navbarr text-center px-1">
       <div class="card" style="width: 18rem;">
         <div class="card-header" style="font-family: 'Sedgwick Ave', cursive;">
-          Dashboard
+          <a href="<?=base_url('')?>" style=" color:#fff;"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="card-header" style="font-family: 'Sedgwick Ave', cursive; color:#fff;">
+          <a href="<?=base_url('user/view_dashboard')?>" style=" color:#fff;">Dashboard</a>
+        </div>
+        <div class="card-header" style="background-color: #303952; font-family: 'Quicksand', sans-serif;">
+          <a href="<?=base_url('tugas')?>" style=" color:#fff;">Tugas</a>
         </div>
         <div class="card-header" style="background-color: #303952; font-family: 'Quicksand', sans-serif;">
           Pengaturan Akun
         </div>
+
         <ul class="list-group list-group-flush card-middle">
           <li class="list-group-item"><a href="view_lihatprofil"><i class="fas fa-user"> Lihat Profil</i> </a></li>
-          <li class="list-group-item"><a href="#"><i class="fas fa-user-edit"> Edit Profil</i> </a></li>
+          <li class="list-group-item"><a href="view_editprofil"><i class="fas fa-user-edit"> Edit Profil</i> </a></li>
         </ul>
       </div>
     </div>
     <div class="col-md-9 content">
       <div class="bg-container">
         <div class="tittle">
-          <h5>Halo Yafimm ! </h5>
+          <h5>Halo <?=$this->session->userdata('username')?> ! </h5>
         </div>
-        <div class="row">
+        <div class="row border-bottom py-2">
           <div class="col-md-12 judul">
             <strong>Informasi terbaru seputar GoQuery dan berita lainnya</strong>
           </div>
@@ -47,7 +54,8 @@
                 <p>Terima kasih!!</p>
               </div>
             </div>
-            <div class="row">
+          </div>
+            <div class="row border-bottom py-2">
               <div class="informasi px-5">
                 <div class="col-md-12 atas">
                   <h6>Forum Diskusi GoQuery telah di tambahkan</h6>
@@ -58,7 +66,8 @@
                   <p>Terima kasih!!</p>
                 </div>
               </div>
-              <div class="row">
+            </div>
+              <div class="row border-bottom py-2">
                 <div class="informasi px-5">
                   <div class="col-md-12 atas">
                     <h6>Forum Diskusi GoQuery telah di tambahkan</h6>
@@ -68,7 +77,8 @@
                     <br>
                     <p>Terima kasih!!</p>
                   </div>
-                </div>  
+                </div>
+                </div>
           </div>
         </div>
         </div>

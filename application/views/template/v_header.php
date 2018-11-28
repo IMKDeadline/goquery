@@ -237,7 +237,7 @@
               <li class="dropdown">
       					<a href="#" data-toggle="dropdown"><i class="fas fa-user">  <?=$this->session->userdata('username')?></i></a>
                 <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="color:#000;" href="<?=base_url('dashboard')?>">Dashboard</a>
+                  <a class="dropdown-item" style="color:#000;" href="<?=base_url('user/view_dashboard')?>">Dashboard</a>
                   <a class="dropdown-item text-danger" style="color:#000;" href="<?=base_url('logout')?>">Logout</a>
                 </div>
       				</li>

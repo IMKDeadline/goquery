@@ -78,7 +78,7 @@ class Forum extends CI_Controller {
         $insert_id = $this->db->insert_id();
         $data['slug'] = $slug.'-'.$insert_id;
         $this->M_forum->set_slug($insert_id, $data);
-        $this->session->set_flashdata('insert_page','success');
+        $this->session->set_flashdata('alert', 'sukses_tambah');
         redirect('forum');
   }
 

@@ -13,6 +13,14 @@
 <main>
 <div class="container-fluid middle ">
   <div class="container">
+    <?php if ($this->session->flashdata('alert') == 'sukses_tambah' ): ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <p>Forum berhasil ditambahkan.</p>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <?php endif; ?>
     <div class="row px-3 pt-5 mb-2">
       <a href="<?=base_url('forum/create')?>" class="btn btn-danger"><i class="fas fa-plus"></i></a>
     </div>

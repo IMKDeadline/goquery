@@ -103,13 +103,13 @@ foreach ($materi as $mtr) {
               <i class="fab fa-wpforms"></i>
             </div>
             <div class="col-md-10">
-              <a href="#"><span>Lihat Diskusi</span></a>
+              <a href="<?=base_url('forum')?>"><span>Lihat Diskusi</span></a>
             </div>
             <div class="col-md-1">
               <i class="fas fa-tasks"></i>
             </div>
             <div class="col-md-10">
-              <a href="#"><span>Latihan dan Quiz</span></a>
+              <a href="<?=base_url('tugas');?>"><span>Latihan Soal</span></a>
             </div>
           </div>
           <div class="row jenis" style="border-bottom: ridge;">
